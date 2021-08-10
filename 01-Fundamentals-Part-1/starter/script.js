@@ -13,7 +13,7 @@
 
 // console.log(myFirstJob)
 
-let iLoveJs = true
+/* let iLoveJs = true
 console.log(iLoveJs);
 console.log(typeof(iLoveJs));
 console.log(typeof(true));
@@ -30,4 +30,20 @@ console.log(work);
 console.log(typeof(work))
 
 console.log(typeof(null))
+*/
+
+// variable declaration
+// mutating the age varaible
+let age = 30;
+age = 31;
+
+const birthYear = 1993;
+// birthYear = 1991;
+
+// const job;
+
+var job =  'coder';
+job = 'doctor';
+
+
 
