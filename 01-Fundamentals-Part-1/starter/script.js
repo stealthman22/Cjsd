@@ -34,30 +34,30 @@ console.log(typeof(null))
 
 // variable declaration
 // mutating the age varaible
-let age = 30;
-age = 31;
+// let age = 30;
+// age = 31;
 
-const birthYear = 1993;
-// birthYear = 1991;
+// const birthYear = 1993;
+// // birthYear = 1991;
 
-// const job;
+// // const job;
 
-var job =  'coder';
-job = 'doctor';
+// var job =  'coder';
+// job = 'doctor';
 
 
 const now = 2021
-const ageJoel = now -1993
-const ageTobi = now - 2001
-console.log(ageJoel, ageTobi)
+// const ageJoel = now -1993
+// const ageTobi = now - 2001
+// console.log(ageJoel, ageTobi)
 
-console.log(ageJoel * 2, ageTobi / 2, 4 ** 3);
+// console.log(ageJoel * 2, ageTobi / 2, 4 ** 3);
 
 // String  concatenation
 
-const firstName ='Alara';
-const lastName = 'Joel';
-console.log(firstName  + ' ' + lastName);
+// const firstName ='Alara';
+// const lastName = 'Joel';
+// console.log(firstName  + ' ' + lastName);
 
 let x = 10 * 3;
 // x = x + 10. .. 40
@@ -69,28 +69,172 @@ x*=4  //x = x * 4
 x++ // x= x+1;
 x-- // x = x - 1
 
-console.log(x);
+// console.log(x);
 
-console.log(ageJoel < ageTobi);
-console.log(ageTobi >= 18);
+// console.log(ageJoel < ageTobi);
+// console.log(ageTobi >= 18);
 
 
 //  comparison operators
-console.log(ageJoel < ageTobi);
+// console.log(ageJoel < ageTobi);
 
-console.log(ageTobi >= 18);
+// console.log(ageTobi >= 18);
 
-const isFullAge = ageTobi >= 18;
+// const isFullAge = ageTobi >= 18;
 
 // Precedence
-console.log(now - 1993 > now - 2001);
+// console.log(now - 1993 > now - 2001);
 
-let a, b;
-a = b = 25-10-5;
-console.log(a,b);
+// let a, b;
+// a = b = 25-10-5;
+// console.log(a,b);
 
-const averageAge = (ageJoel + ageTobi) / 2;
+// const averageAge = (ageJoel + ageTobi) / 2;
 
-console.log(ageJoel, ageTobi, averageAge)
+// console.log(ageJoel, ageTobi, averageAge)
 
 
+// Template Literals
+const firstName = 'Alara';
+const job ='web developer';
+const birthYear = 1993;
+
+// Type coercion
+// const joel = "I'm " + firstName + ', a ' + (now - birthYear) + ' years old ' + job + '!';
+
+// console.log(joel);
+
+// const joelNew = `I'm ${firstName} a ${now - birthYear} years old ${job}`
+// console.log(joelNew);
+
+
+// console.log('String with /n /
+// multiple \n\ 
+// lines')
+
+// With template literals
+// console.log(`String
+// multiple
+// lines`)
+
+// driver's license 
+// const age = 15;
+// const isOldEnough = age >= 18;
+
+// if (isOldEnough) {
+// console.log('Sarah is legal for driving license 😊️')
+// }
+
+// const age = 15;
+
+// if ( age >= 18) {
+// console.log('Sarah is legal for driving license 😊️')
+// } else {
+//  const yearsLeft = 18 - age
+//  console.log(`Sarah is still too young, wait another ${yearsLeft} years 😓️`)
+// }
+
+// const yearOfBirth = 1993;
+
+// let century;
+// if(yearOfBirth <= 2000) {
+//   century = 20;
+// } else {
+//   century = 21
+// }
+// console.log(century)
+
+// Types coercion/ conversion
+
+//  coerced
+// const inputYear = '1991'
+// console.log(inputYear + 18);
+
+// converted to avoid coercion
+const inputYear = '1991'
+// console.log(Number(inputYear )+ 18 , inputYear);
+
+// // Nan weirdo
+// console.log(Number('joel'));
+// console.log(typeof NaN);
+
+// console.log(String(590), 590);
+
+// // coercion
+// console.log('I am ' + 23 + " years old ");
+
+// console.log('23' + '10' -  3);
+
+// console.log('23' * 4)
+
+// // logical coercion
+// console.log('23' / 2)
+
+// //  lets play
+// let n = '1' + 1;
+// n = n -1;
+// console.log(n)
+
+
+// Truthy and falsy
+
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean('joel'));
+// console.log(Boolean({}));
+// console.log(Boolean(NaN));
+
+// imlicit coercion involving  booleans
+// const money = 100;
+
+// if (money) {
+//  console.log("Don't spend it all")
+// } else {
+//  console.log('You should get a job or start a business')
+// }
+
+//  another js weirdo
+// let height=0
+// if(height ) {
+//  console.log('Yes height is defined')
+// } else {
+//  console.log('Height is not defined')
+// }
+
+// to factor it in
+// let height=0
+// if(height || height === 0) {
+//  console.log('Yes height is defined')
+// } else {
+//  console.log('Height is not defined')
+// }
+
+
+//  Equality operator 
+const age = '18';
+
+if(age === 18) console.log('You just became an adult (strict)' );
+
+if(age == 18) console.log('You just became an adult (loose)' );
+
+// getting a value from any webpage using prompt
+
+const fav = Number(prompt("what's your favourite number"));
+console.log(fav, typeof(fav))
+
+// if (fav === 23) {
+// console.log('Thats amazing!')
+// }
+
+//  esle if
+if (fav === 23) {
+ console.log('Thats amazing!')
+ } else if (fav === 7) {
+  console.log("That's a cool number too")
+ } else {
+  console.log('Not a nice number 😓️')
+ }
+
+ if (fav !== 23 ) {
+  console.log('why not a good number dude')
+ }

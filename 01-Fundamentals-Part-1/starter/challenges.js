@@ -8,12 +8,6 @@ let johnHeight = 1.95;
 let johnWeight = 95;
 
 
-let markBmi = markWeight / markHeight **2;
-let johnBmi = johnWeight / (johnHeight * johnHeight);
-// console.log(markBmi, johnBmi);
-
-markHigherBmi = markBmi > johnBmi;
-// console.log(markHigherBmi); 
 
 // using test data 2
 markHeight = 1.88;
@@ -22,6 +16,19 @@ markWeight = 92;
 johnHeight = 1.76;
 johnWeight= 85;
 
-console.log(markBmi, johnBmi);
-console.log(markHigherBmi); 
+let markBmi = Math.round(markWeight / markHeight **2);
+let johnBmi = Math.round(johnWeight / (johnHeight * johnHeight));
+// console.log(markBmi, johnBmi);
 
+// let markHigherBmi = markBmi > johnBmi;
+// console.log(markHigherBmi); 
+
+// console.log(markBmi, johnBmi, markHigherBmi);
+
+
+//  Challenge 2
+if (markBmi > johnBmi === true) {
+ console.log(`Mark's BMI(${markBmi}) is higher than John's(${johnBmi})`)
+} else {
+ console.log(`John's BMI(${johnBmi}) is higher than Mark's(${markBmi})`)
+}
