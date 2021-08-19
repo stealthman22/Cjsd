@@ -46,4 +46,51 @@ var job =  'coder';
 job = 'doctor';
 
 
+const now = 2021
+const ageJoel = now -1993
+const ageTobi = now - 2001
+console.log(ageJoel, ageTobi)
+
+console.log(ageJoel * 2, ageTobi / 2, 4 ** 3);
+
+// String  concatenation
+
+const firstName ='Alara';
+const lastName = 'Joel';
+console.log(firstName  + ' ' + lastName);
+
+let x = 10 * 3;
+// x = x + 10. .. 40
+x += 10; 
+
+x*=4  //x = x * 4
+
+// increment
+x++ // x= x+1;
+x-- // x = x - 1
+
+console.log(x);
+
+console.log(ageJoel < ageTobi);
+console.log(ageTobi >= 18);
+
+
+//  comparison operators
+console.log(ageJoel < ageTobi);
+
+console.log(ageTobi >= 18);
+
+const isFullAge = ageTobi >= 18;
+
+// Precedence
+console.log(now - 1993 > now - 2001);
+
+let a, b;
+a = b = 25-10-5;
+console.log(a,b);
+
+const averageAge = (ageJoel + ageTobi) / 2;
+
+console.log(ageJoel, ageTobi, averageAge)
+
 
