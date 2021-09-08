@@ -18,7 +18,7 @@ let language;
 
 //  let const var
  language = 'twi';
- console.log(language);
+ // console.log(language);
 
  //  Basic operators.
 
@@ -29,18 +29,18 @@ console.log(populationSplit)
 
 // 2 Increase the population of your country by 1 and log the result to the console
 let incrementPopulation =  populationGhana++;
-console.log(incrementPopulation);
+// console.log(incrementPopulation);
 
 // 3. Finland has a population of 6 million. Does your country have more people than
 // Finland?
 
 let populationFInnland = 6000000;
 
-if (populationFInnland < populationGhana  ) {
- console.log('Ghana has more population than Finnland')
-} else {
- console.log('FInnland has more population than Ghana')
-}
+// if (populationFInnland < populationGhana  ) {
+//  console.log('Ghana has more population than Finnland')
+// } else {
+//  console.log('FInnland has more population than Ghana')
+// }
 
 
 // No 4. YES

@@ -211,30 +211,66 @@ const inputYear = '1991'
 
 
 //  Equality operator 
-const age = '18';
+// const age = '18';
 
-if(age === 18) console.log('You just became an adult (strict)' );
+// if(age === 18) console.log('You just became an adult (strict)' );
 
-if(age == 18) console.log('You just became an adult (loose)' );
+// if(age == 18) console.log('You just became an adult (loose)' );
 
-// getting a value from any webpage using prompt
+// // getting a value from any webpage using prompt
 
-const fav = Number(prompt("what's your favourite number"));
-console.log(fav, typeof(fav))
+// const fav = Number(prompt("what's your favourite number"));
+// console.log(fav, typeof(fav))
 
 // if (fav === 23) {
 // console.log('Thats amazing!')
 // }
 
 //  esle if
-if (fav === 23) {
- console.log('Thats amazing!')
- } else if (fav === 7) {
-  console.log("That's a cool number too")
- } else {
-  console.log('Not a nice number 😓️')
- }
+// if (fav === 23) {
+//  console.log('Thats amazing!')
+//  } else if (fav === 7) {
+//   console.log("That's a cool number too")
+//  } else {
+//   console.log('Not a nice number 😓️')
+//  }
 
- if (fav !== 23 ) {
-  console.log('why not a good number dude')
- }
+
+//  // Different operator
+//  if (fav !== 23 ) {
+//   console.log('why not a good number dude')
+//  } else {
+//   console.log('Cool dude')
+//  }
+
+
+
+// Boolean Logic
+
+const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+
+// and
+// console.log(hasDriversLicense && hasGoodVision);
+
+// or
+// console.log(hasDriversLicense || hasGoodVision);
+
+// console.log(!hasDriversLicense);
+
+// const shouldDrive = hasDriversLicense && hasGoodVision;
+
+// if(shouldDrive) {
+//  console.log('Ama is safe to drive')
+// } else {
+//  console.log('Someone else should drive her')
+// }
+
+const isTired = false; // C
+// console.log(hasDriversLicense || hasGoodVision || isTired) 
+
+if(hasDriversLicense && hasGoodVision && !isTired) {
+ console.log('Ama is safe to drive')
+} else {
+ console.log('Someone else should drive her')
+}
