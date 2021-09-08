@@ -16,7 +16,7 @@ markWeight = 92;
 johnHeight = 1.76;
 johnWeight= 85;
 
-let markBmi = Math.round(markWeight / markHeight **2);
+let markBmi = Math.round(markWeight / markHeight ** 2);
 let johnBmi = Math.round(johnWeight / (johnHeight * johnHeight));
 // console.log(markBmi, johnBmi);
 
@@ -27,8 +27,74 @@ let johnBmi = Math.round(johnWeight / (johnHeight * johnHeight));
 
 
 //  Challenge 2
-if (markBmi > johnBmi === true) {
- console.log(`Mark's BMI(${markBmi}) is higher than John's(${johnBmi})`)
-} else {
- console.log(`John's BMI(${johnBmi}) is higher than Mark's(${markBmi})`)
+// if (markBmi > johnBmi === true) {
+//  console.log(`Mark's BMI(${markBmi}) is higher than John's(${johnBmi})`)
+// } else {
+//  console.log(`John's BMI(${johnBmi}) is higher than Mark's(${markBmi})`)
+// }
+
+
+// Challenge 3
+
+// No 1 and 2
+
+// const averageScoreDolphins = Math.round((96 + 108 + 89) / 3);
+// const averageScoreKoalas = Math.round((88 + 91 +105) / 3);
+
+// console.log(`Dolphins averaged  ${averageScoreDolphins}, 
+// Koalas averaged  ${averageScoreKoalas}`);
+
+// if (averageScoreDolphins > averageScoreKoalas) {
+//  console.log('Team Dolphins Win')
+// } else if (averageScoreDolphins < averageScoreKoalas) {
+//  console.log('Team Koalas Win')
+// } else if (averageScoreDolphins === averageScoreKoalas) {
+//  console.log('Both teams earned a draw, share the trophy guys!')
+// } else {
+// console.log('That doesnt seem right')
+// }
+// Team dolphins win
+
+
+
+// No 3 
+// const averageScoreDolphins = Math.round((97 + 112 + 101) / 3);
+// const averageScoreKoalas = Math.round((109 + 95 +123) / 3);
+
+// console.log(`Dolphins averaged  ${averageScoreDolphins}, 
+// Koalas averaged  ${averageScoreKoalas}`);
+
+// if (averageScoreDolphins > averageScoreKoalas && averageScoreDolphins > 100) {
+//  console.log('Team Dolphins Win')
+// } else if (averageScoreKoalas > averageScoreDolphins && averageScoreKoalas > 100 ) {
+//  console.log('Team Koalas Win')
+// } else if (averageScoreDolphins === averageScoreKoalas ) {
+//  console.log('Both teams earned a draw, share the trophy guys!')
+// } else if (averageScoreDolphins > 100 ||
+//   averageScoreKoalas > 100) {
+// console.log('Minimum score requirement not passed')
+//   } 
+// else {
+// console.log("That doesn't seem right")
+// }
+
+//  No 4
+const averageScoreDolphins = Math.round((97 + 112 + 101) / 3);
+const averageScoreKoalas = Math.round((109 + 95 +106) / 3);
+
+console.log(`Dolphins averaged  ${averageScoreDolphins}, 
+Koalas averaged  ${averageScoreKoalas}`);
+
+if (averageScoreDolphins > averageScoreKoalas && averageScoreDolphins > 100) {
+ console.log('Team Dolphins Win')
+} else if (averageScoreKoalas > averageScoreDolphins && averageScoreKoalas > 100 ) {
+ console.log('Team Koalas Win')
+} else if (averageScoreDolphins === averageScoreKoalas && (averageScoreDolphins > 100 || averageScoreKoalas > 100) ) {
+ console.log('Both teams earned a draw, share the trophy guys!')
+} else if (averageScoreDolphins > 100 ||
+  averageScoreKoalas > 100) {
+console.log('Minimum score requirement not passed')
+  } 
+else {
+console.log("That doesn't seem right")
 }
