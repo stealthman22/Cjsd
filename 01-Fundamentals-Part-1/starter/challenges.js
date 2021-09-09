@@ -91,7 +91,7 @@ if (averageScoreDolphins > averageScoreKoalas && averageScoreDolphins > 100) {
  console.log('Team Koalas Win')
 } else if (averageScoreDolphins === averageScoreKoalas && (averageScoreDolphins > 100 || averageScoreKoalas > 100) ) {
  console.log('Both teams earned a draw, share the trophy guys!')
-} else if (averageScoreDolphins > 100 ||
+} else if (averageScoreDolphins > 100 &&
   averageScoreKoalas > 100) {
 console.log('Minimum score requirement not passed')
   } 
