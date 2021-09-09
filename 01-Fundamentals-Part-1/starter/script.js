@@ -45,8 +45,7 @@ console.log(typeof(null))
 // var job =  'coder';
 // job = 'doctor';
 
-
-const now = 2021
+const now = 2021;
 // const ageJoel = now -1993
 // const ageTobi = now - 2001
 // console.log(ageJoel, ageTobi)
@@ -61,19 +60,18 @@ const now = 2021
 
 let x = 10 * 3;
 // x = x + 10. .. 40
-x += 10; 
+x += 10;
 
-x*=4  //x = x * 4
+x *= 4; //x = x * 4
 
 // increment
-x++ // x= x+1;
-x-- // x = x - 1
+x++; // x= x+1;
+x--; // x = x - 1
 
 // console.log(x);
 
 // console.log(ageJoel < ageTobi);
 // console.log(ageTobi >= 18);
-
 
 //  comparison operators
 // console.log(ageJoel < ageTobi);
@@ -93,10 +91,9 @@ x-- // x = x - 1
 
 // console.log(ageJoel, ageTobi, averageAge)
 
-
 // Template Literals
-const firstName = 'Alara';
-const job ='web developer';
+const firstName = "Alara";
+const job = "web developer";
 const birthYear = 1993;
 
 // Type coercion
@@ -107,9 +104,8 @@ const birthYear = 1993;
 // const joelNew = `I'm ${firstName} a ${now - birthYear} years old ${job}`
 // console.log(joelNew);
 
-
 // console.log('String with /n /
-// multiple \n\ 
+// multiple \n\
 // lines')
 
 // With template literals
@@ -117,7 +113,7 @@ const birthYear = 1993;
 // multiple
 // lines`)
 
-// driver's license 
+// driver's license
 // const age = 15;
 // const isOldEnough = age >= 18;
 
@@ -151,7 +147,7 @@ const birthYear = 1993;
 // console.log(inputYear + 18);
 
 // converted to avoid coercion
-const inputYear = '1991'
+const inputYear = "1991";
 // console.log(Number(inputYear )+ 18 , inputYear);
 
 // // Nan weirdo
@@ -174,7 +170,6 @@ const inputYear = '1991'
 // let n = '1' + 1;
 // n = n -1;
 // console.log(n)
-
 
 // Truthy and falsy
 
@@ -209,8 +204,7 @@ const inputYear = '1991'
 //  console.log('Height is not defined')
 // }
 
-
-//  Equality operator 
+//  Equality operator
 // const age = '18';
 
 // if(age === 18) console.log('You just became an adult (strict)' );
@@ -235,15 +229,12 @@ const inputYear = '1991'
 //   console.log('Not a nice number 😓️')
 //  }
 
-
 //  // Different operator
 //  if (fav !== 23 ) {
 //   console.log('why not a good number dude')
 //  } else {
 //   console.log('Cool dude')
 //  }
-
-
 
 // Boolean Logic
 
@@ -267,10 +258,86 @@ const hasGoodVision = true; // B
 // }
 
 const isTired = false; // C
-// console.log(hasDriversLicense || hasGoodVision || isTired) 
+// console.log(hasDriversLicense || hasGoodVision || isTired)
 
-if(hasDriversLicense && hasGoodVision && !isTired) {
- console.log('Ama is safe to drive')
-} else {
- console.log('Someone else should drive her')
+// if(hasDriversLicense && hasGoodVision && !isTired) {
+//  console.log('Ama is safe to drive')
+// } else {
+//  console.log('Someone else should drive her')
+// }
+
+// THE SWITCH STATEMENT
+const day = "friday";
+
+// switch (day) {
+// 	case "monday":
+// 		console.log("Plan for the week");
+// 		console.log("Check on mum");
+// 		break;
+// 	case "tuesday":
+// 		console.log("Conduct ideation sessions");
+// 	case "wednesday":
+// 	case "thursday":
+// 		console.log("Work on Projects");
+// 		break;
+// 	case "friday":
+// 		console.log("Play basketball");
+// 		break;
+// 	case "saturday":
+// 	case "sunday":
+// 		console.log("Enjoy the weekend");
+// 		break;
+// 	default:
+// 		console.log("Not a valid day!");
+// }
+
+// if (day === "monday") {
+// 	console.log("Plan for the week");
+// 	console.log("Check on mum");
+// }
+// else if (day === "tuesday") {
+// 	console.log("Conduct ideation sessions");
+// }
+// else if (day === "wednesday" || day === "thursday ") {
+// 	console.log("Work on Projects");
+// }
+// else if (day === "friday") {
+// 	console.log("Play basketball");
+// }
+// else if (day === "saturday" || day === "sunday") {
+// 	console.log("Enjoy the weekend");
+// }
+// else {
+// 	console.log("Not a valid day!");
+// }
+
+// THE TERNARY OPERATOR
+
+const age = 12;
+
+// age >= 18 ? console.log("I am legal to drink wine 🍷️") :
+// console.log("I think I will just stick with water till I am older");
+
+// great use-case for ternary
+// const drink =
+
+// 		age >= 18 ? "wine 🍷️" :
+// 		"water 🌊️";
+// console.log(drink);
+
+console.log(
+	`I like to drink ${
+		age >= 18 ? "wine 🍷️" :
+		"water 🌊️"}`
+);
+
+// for if the value has to be stored outside the statement.
+let drink2;
+
+if (age >= 18) {
+	drink2 = "wine";
 }
+else {
+	drink2 = "water";
+}
+console.log(drink2);
