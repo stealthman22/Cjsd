@@ -49,13 +49,13 @@ const calcAge3 = (birthYear) => 2021 - birthYear;
 const age3 = calcAge3(1968);
 console.log(age3);
 
-const yearsUntilRetirement = (birthYear, firstName) => {
-	const age = 2021 - birthYear;
-	const retirement = 65 - age;
-	return `${firstName} retires in ${retirement} years`;
-};
+// const yearsUntilRetirement = (birthYear, firstName) => {
+// 	const age = 2021 - birthYear;
+// 	const retirement = 65 - age;
+// 	return `${firstName} retires in ${retirement} years`;
+// };
 
-console.log(yearsUntilRetirement(1991, "Jombo"));
+// console.log(yearsUntilRetirement(1991, "Jombo"));
 
 // FUNCTIONS CALLING OTHER FUNCTIONS
 
@@ -63,16 +63,16 @@ function cutFruitPieces (fruit) {
 	return fruit * 4;
 }
 
-function fruitProcessor (apples, bananas) {
-	// console.log(apples, bananas);
-	const applePieces = cutFruitPieces(apples);
-	const bananaPieces = cutFruitPieces(bananas);
-	const juice = `Juice with ${applePieces} pieces of apple and ${bananaPieces} pieces of  banana.`;
-	return juice;
-}
+// function fruitProcessor (apples, bananas) {
+// 	// console.log(apples, bananas);
+// 	const applePieces = cutFruitPieces(apples);
+// 	const bananaPieces = cutFruitPieces(bananas);
+// 	const juice = `Juice with ${applePieces} pieces of apple and ${bananaPieces} pieces of  banana.`;
+// 	return juice;
+// }
 
-const bigJuice = fruitProcessor(2, 3);
-console.log(bigJuice);
+// const bigJuice = fruitProcessor(2, 3);
+// console.log(bigJuice);
 
 // const appleJuice = fruitProcessor(10, 7);
 // console.log(appleJuice);
@@ -84,3 +84,28 @@ console.log(bigJuice);
 // function calcAge1 (birthYear) {
 // 	return 2021 - birthYear;
 // }
+
+// Reviewing funttions
+
+// const calcAge = function (birthYear) {
+// 	return 2021 - birthYear;
+// };
+
+// const yearsUntilRetirement = function (birthYear, firstName) {
+// 	const age = calcAge(birthYear);
+// 	const retirement = 65 - age;
+
+// 	if (retirement > 0) {
+// 		console.log(`${firstName} retires in ${retirement} years`);
+// 		return retirement;
+// 	}
+// 	else {
+// 		console.log(`${firstName} is already retired`);
+// 		return -1;
+// 	}
+
+// 	// return
+// };
+
+// console.log(yearsUntilRetirement(1991, "Jungo"));
+// console.log(yearsUntilRetirement(1930, "Bambi"));
