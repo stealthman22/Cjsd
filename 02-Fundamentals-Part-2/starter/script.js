@@ -109,3 +109,51 @@ function cutFruitPieces (fruit) {
 
 // console.log(yearsUntilRetirement(1991, "Jungo"));
 // console.log(yearsUntilRetirement(1930, "Bambi"));
+
+// ARRAYS
+
+const friends = [
+	"Micheal",
+	"Steven",
+	"Peter",
+];
+
+const years1 = new Array(1990, 2000, 2021);
+
+console.log(friends[0]);
+console.log(friends.length);
+// get last element in the arra
+console.log(friends[friends.length - 1]);
+
+//  mutating the array
+friends[2] = "Jogun";
+console.log(friends);
+
+//  different types
+
+const joel = [
+	"Joel",
+	2021 - 1993,
+];
+console.log(joel);
+
+const calcAge = function (birthYear) {
+	return 2021 - birthYear;
+};
+
+const years = [
+	1990,
+	1967,
+	2002,
+	2010,
+	2018,
+];
+
+console.log(calcAge(years));
+
+const ages = [
+	calcAge(years[0]),
+	calcAge(years[1]),
+	calcAge(years[3]),
+];
+console.log(ages);
