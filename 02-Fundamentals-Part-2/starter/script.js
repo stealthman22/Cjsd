@@ -157,3 +157,31 @@ const ages = [
 	calcAge(years[3]),
 ];
 console.log(ages);
+
+// push method
+const newLength = friends.push("Jay");
+console.log(friends, newLength);
+
+// unshift method
+friends.unshift;
+console.log(friends);
+
+// pop
+const popped = friends.pop();
+console.log(popped, friends);
+
+// shift
+const shifted = friends.shift();
+console.log(shifted, friends);
+
+// indexOF
+console.log(friends.indexOf("Steven"));
+console.log(friends.indexOf("jagunnnu"));
+
+// includes
+console.log(friends.includes("jagunnnu"));
+console.log(friends.includes("Steven"));
+
+if (friends.includes("Steven")) {
+	console.log("You have a friend called steven anaa");
+}
