@@ -112,76 +112,155 @@ function cutFruitPieces (fruit) {
 
 // ARRAYS
 
-const friends = [
-	"Micheal",
-	"Steven",
-	"Peter",
-];
+// const friends = [
+// 	"Micheal",
+// 	"Steven",
+// 	"Peter",
+// ];
 
-const years1 = new Array(1990, 2000, 2021);
+// const years1 = new Array(1990, 2000, 2021);
 
-console.log(friends[0]);
-console.log(friends.length);
-// get last element in the arra
-console.log(friends[friends.length - 1]);
+// console.log(friends[0]);
+// console.log(friends.length);
+// // get last element in the arra
+// console.log(friends[friends.length - 1]);
 
-//  mutating the array
-friends[2] = "Jogun";
-console.log(friends);
+// //  mutating the array
+// friends[2] = "Jogun";
+// console.log(friends);
 
-//  different types
+// //  different types
 
-const joel = [
-	"Joel",
-	2021 - 1993,
-];
-console.log(joel);
+// const joel = [
+// 	"Joel",
+// 	2021 - 1993,
+// ];
+// console.log(joel);
 
-const calcAge = function (birthYear) {
-	return 2021 - birthYear;
+// const calcAge = function (birthYear) {
+// 	return 2021 - birthYear;
+// };
+
+// const years = [
+// 	1990,
+// 	1967,
+// 	2002,
+// 	2010,
+// 	2018,
+// ];
+
+// console.log(calcAge(years));
+
+// const ages = [
+// 	calcAge(years[0]),
+// 	calcAge(years[1]),
+// 	calcAge(years[3]),
+// ];
+// console.log(ages);
+
+// // push method
+// const newLength = friends.push("Jay");
+// console.log(friends, newLength);
+
+// // unshift method
+// friends.unshift;
+// console.log(friends);
+
+// // pop
+// const popped = friends.pop();
+// console.log(popped, friends);
+
+// // shift
+// const shifted = friends.shift();
+// console.log(shifted, friends);
+
+// // indexOF
+// console.log(friends.indexOf("Steven"));
+// console.log(friends.indexOf("jagunnnu"));
+
+// // includes
+// console.log(friends.includes("jagunnnu"));
+// console.log(friends.includes("Steven"));
+
+// if (friends.includes("Steven")) {
+// 	console.log("You have a friend called steven anaa");
+// }
+
+// OBJECTS
+// const joel = {
+// 	firstName : "Joel",
+// 	lastName  : "Alara",
+// 	age       : 2021 - 1993,
+// 	job       : "Web developer",
+// 	friends   : [
+// 		"Jesus",
+// 		"Gabby",
+// 		"Salim",
+// 		"Wakeup",
+// 		"Corni",
+// 	],
+// };
+
+// // Dot vs bracket for objects
+// console.log(joel.lastName);
+// console.log(joel["age"]);
+
+// const nameKey = "Name";
+// // concatenating key names
+// // this won't work with the dot notation. Throws error unexpected string
+// console.log(joel["first" + nameKey]);
+
+// const interestedIN = prompt(
+// 	"What do you want to know about Joel? Choose between firstName, lastName, age, job, and friends"
+// );
+
+// // importance of bracket notation
+// if (joel[interestedIN]) {
+// 	console.log(joel[interestedIN]);
+// }
+// else {
+// 	console.log(
+// 		"Wrong request! Choose between firstnName, lastName, age, job, and friends"
+// 	);
+// }
+
+// joel.location = "Accra";
+// joel["twitter"] = "alara-joel";
+// console.log(joel);
+
+// // challenge
+// // Joel has 5 friends and his best friend is called Jesus.
+
+// console.log(
+// 	`${joel.firstName} has ${joel.friends
+// 		.length} friend(s), and his best friend is called ${joel.friends[0]}`
+// );
+
+// OBJECTS METHODS
+const joel = {
+	firstName : "Joel",
+	lastName  : "Alara",
+	age       : 2021 - 1993,
+	birthYear : 1993,
+	job       : "Web developer",
+	friends   : [
+		"Jesus",
+		"Gabby",
+		"Salim",
+		"Wakeup",
+		"Corni",
+	],
+
+	// calcAge   : function (birthYear) {
+	// 	return 2021 - birthYear;
+	// },
+
+	// using this
+	calcAge   : function () {
+		console.log(this);
+		return 2021 - this.birthYear;
+	},
 };
 
-const years = [
-	1990,
-	1967,
-	2002,
-	2010,
-	2018,
-];
-
-console.log(calcAge(years));
-
-const ages = [
-	calcAge(years[0]),
-	calcAge(years[1]),
-	calcAge(years[3]),
-];
-console.log(ages);
-
-// push method
-const newLength = friends.push("Jay");
-console.log(friends, newLength);
-
-// unshift method
-friends.unshift;
-console.log(friends);
-
-// pop
-const popped = friends.pop();
-console.log(popped, friends);
-
-// shift
-const shifted = friends.shift();
-console.log(shifted, friends);
-
-// indexOF
-console.log(friends.indexOf("Steven"));
-console.log(friends.indexOf("jagunnnu"));
-
-// includes
-console.log(friends.includes("jagunnnu"));
-console.log(friends.includes("Steven"));
-
-if (friends.includes("Steven")) {
-	console.log("You have a friend called steven anaa");
-}
+console.log(joel.calcAge());
+// console.log(joel["calcAge"]);
