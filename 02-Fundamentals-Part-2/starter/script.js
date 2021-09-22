@@ -238,29 +238,53 @@ function cutFruitPieces (fruit) {
 
 // OBJECTS METHODS
 const joel = {
-	firstName : "Joel",
-	lastName  : "Alara",
-	age       : 2021 - 1993,
-	birthYear : 1993,
-	job       : "Web developer",
-	friends   : [
+	firstName         : "Joel",
+	lastName          : "Alara",
+	// age       : 2021 - 1993,
+	birthYear         : 1993,
+	job               : "Web developer",
+	friends           : [
 		"Jesus",
 		"Gabby",
 		"Salim",
 		"Wakeup",
 		"Corni",
 	],
-
+	hasDriversLicense : true,
 	// calcAge   : function (birthYear) {
 	// 	return 2021 - birthYear;
 	// },
 
 	// using this
-	calcAge   : function () {
-		console.log(this);
-		return 2021 - this.birthYear;
+	calcAge           : function () {
+		// console.log(this);
+		//  storing a new prop with this
+		this.age = 2021 - this.birthYear;
+		return this.age;
+	},
+
+	// using this and getters
+	// get calcAge () {
+	// 	// console.log(this);
+	// 	//  storing a new prop with this
+	// 	this.age = 2021 - this.birthYear;
+	// 	return this.age;
+	// },
+
+	getSummary        : function () {
+		return `${this.firstName} is a ${this.calcAge()} year old ${this
+			.job}, who ${
+			this.hasDriversLicense ? `has a drivers license ` :
+			`does not have a driver's license`}`;
 	},
 };
 
+console.log(joel);
+
 console.log(joel.calcAge());
-// console.log(joel["calcAge"]);
+
+console.log(joel.age);
+
+console.log(joel.age);
+
+console.log(joel.getSummary());
