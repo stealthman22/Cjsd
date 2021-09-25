@@ -105,8 +105,8 @@ const mark = {
 	height   : 1.69,
 
 	calcBmi  : function () {
-		const myBmi = Math.round(this.mass / this.height ** 2);
-		return myBmi;
+		this.bmi = Math.round(this.mass / this.height ** 2);
+		return this.bmi;
 	},
 };
 
@@ -116,14 +116,17 @@ const john = {
 	height   : 1.95,
 
 	calcBmi  : function () {
-		const myBmi = Math.round(this.mass / this.height ** 2);
-		return myBmi;
+		this.bmi = Math.round(this.mass / this.height ** 2);
+		return this.bmi;
 	},
 };
+
+mark.calcBmi();
+john.calcBmi();
 
 const bmiCompare = console.log(`
 ${
 	john.bmi >
-	mark.bmi ? `${john.fullName}'s BMI (${john.calcBmi}) is higher than ${mark.fullName}'s (${mark.bmi})` :
+	mark.bmi ? `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})` :
 	`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})`}
 `);
