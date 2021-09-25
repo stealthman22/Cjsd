@@ -100,34 +100,30 @@
 // Challenge 3
 
 const mark = {
-	fullName    : "Mark Miller",
-	mass        : 78,
-	height      : 1.69,
+	fullName : "Mark Miller",
+	mass     : 78,
+	height   : 1.69,
 
-	calcMarkBmi : function () {
-		const markBmi = Math.round(this.mass / this.height ** 2);
-		return markBmi;
+	calcBmi  : function () {
+		const myBmi = Math.round(this.mass / this.height ** 2);
+		return myBmi;
 	},
-
-	// bmi         : this.calcMarkBmi(),
 };
 
 const john = {
-	fullName    : "John Smith",
-	mass        : 92,
-	height      : 1.95,
+	fullName : "John Smith",
+	mass     : 92,
+	height   : 1.95,
 
-	calcJohnBmi : function () {
-		const johnBmi = Math.round(this.mass / this.height ** 2);
-		return johnBmi;
+	calcBmi  : function () {
+		const myBmi = Math.round(this.mass / this.height ** 2);
+		return myBmi;
 	},
-
-	// bmi         : this.calcJohnBmi(),
 };
 
 const bmiCompare = console.log(`
 ${
-	john.calcJohnBmi() >
-	mark.calcMarkBmi() ? `${john.fullName}'s BMI (${john.calcJohnBmi}) is higher than ${mark.fullName}'s (${mark.calcMark()})` :
-	`${mark.fullName}'s BMI (${mark.calcMarkBmi()}) is higher than ${john.fullName}'s (${john.calcJohnBmi()})`}
+	john.bmi >
+	mark.bmi ? `${john.fullName}'s BMI (${john.calcBmi}) is higher than ${mark.fullName}'s (${mark.bmi})` :
+	`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})`}
 `);
