@@ -236,55 +236,153 @@ function cutFruitPieces (fruit) {
 // 		.length} friend(s), and his best friend is called ${joel.friends[0]}`
 // );
 
-// OBJECTS METHODS
-const joel = {
-	firstName         : "Joel",
-	lastName          : "Alara",
-	// age       : 2021 - 1993,
-	birthYear         : 1993,
-	job               : "Web developer",
-	friends           : [
-		"Jesus",
-		"Gabby",
-		"Salim",
-		"Wakeup",
-		"Corni",
+// // OBJECTS METHODS
+// const joel = {
+// 	firstName         : "Joel",
+// 	lastName          : "Alara",
+// 	// age       : 2021 - 1993,
+// 	birthYear         : 1993,
+// 	job               : "Web developer",
+// 	friends           : [
+// 		"Jesus",
+// 		"Gabby",
+// 		"Salim",
+// 		"Wakeup",
+// 		"Corni",
+// 	],
+// 	hasDriversLicense : true,
+// 	// calcAge   : function (birthYear) {
+// 	// 	return 2021 - birthYear;
+// 	// },
+
+// 	// using this
+// 	calcAge           : function () {
+// 		// console.log(this);
+// 		//  storing a new prop with this
+// 		this.age = 2021 - this.birthYear;
+// 		return this.age;
+// 	},
+
+// 	// using this and getters
+// 	// get calcAge () {
+// 	// 	// console.log(this);
+// 	// 	//  storing a new prop with this
+// 	// 	this.age = 2021 - this.birthYear;
+// 	// 	return this.age;
+// 	// },
+
+// 	getSummary        : function () {
+// 		return `${this.firstName} is a ${this.calcAge()} year old ${this
+// 			.job}, who ${
+// 			this.hasDriversLicense ? `has a drivers license ` :
+// 			`does not have a driver's license`}`;
+// 	},
+// };
+
+// console.log(joel);
+
+// console.log(joel.calcAge());
+
+// console.log(joel.age);
+
+// console.log(joel.age);
+
+// console.log(joel.getSummary());
+
+// LOOPS
+
+// The for loop
+
+// console.log("Lifting weights repetition 1  🏋‍♀️️");s
+
+//  for loop runs until condition is false
+// for (let rep = 1; rep <= 10; rep++) {
+// 	console.log(`Lifting weights repetition  ${rep}  🏋‍♀️️`);
+// }
+
+// LOOPING ARRAYS, BREAKING AND CONTINUING
+const friends = [
+	"Micheal",
+	"Steven",
+	45,
+	"Peter",
+
+	"wollie",
+	[
+		"apple",
+		"lollipop",
+		"strawberry",
 	],
-	hasDriversLicense : true,
-	// calcAge   : function (birthYear) {
-	// 	return 2021 - birthYear;
-	// },
+	"LAST MAN STANDING ",
+];
 
-	// using this
-	calcAge           : function () {
-		// console.log(this);
-		//  storing a new prop with this
-		this.age = 2021 - this.birthYear;
-		return this.age;
-	},
+const types = [];
 
-	// using this and getters
-	// get calcAge () {
-	// 	// console.log(this);
-	// 	//  storing a new prop with this
-	// 	this.age = 2021 - this.birthYear;
-	// 	return this.age;
-	// },
+// for (let i = 0; i < friends.length; i++) {
+// 	console.log(friends[i], typeof friends[i]);
+// 	// add dynamically created values to another array 1
+// 	// types[i] = typeof friends[i];
 
-	getSummary        : function () {
-		return `${this.firstName} is a ${this.calcAge()} year old ${this
-			.job}, who ${
-			this.hasDriversLicense ? `has a drivers license ` :
-			`does not have a driver's license`}`;
-	},
-};
+// 	// add dynamically created values to another array using push
+// 	types.push(typeof friends[i]);
+// }
 
-console.log(joel);
+console.log(types);
 
-console.log(joel.calcAge());
+const years = [
+	1991,
+	1992,
+	1993,
+	1994,
+	2008,
+	1876,
+];
 
-console.log(joel.age);
+// const ages = [];
 
-console.log(joel.age);
+// for (let i = 0; i < years.length; i++) {
+// 	ages.push(2021 - years[i]);
+// }
 
-console.log(joel.getSummary());
+// console.log(ages);
+
+//  continue and break statements
+// Continue
+// console.log("---ONLY STRINGS---");
+// for (let i = 0; i < friends.length; i++) {
+// 	if (typeof friends[i] !== "string") continue;
+// 	console.log(friends[i], typeof friends[i]);
+// }
+
+// Break
+// console.log("-----Break with Number-----");
+// for (let i = 0; i < friends.length; i++) {
+// 	if (typeof friends[i] === "number") break;
+// 	console.log(friends[i], typeof friends[i]);
+// }
+
+// LOOPING  BACKWARDS AND NESTED LOOPS
+// for (let i = friends.length - 1; i >= 0; i--) {
+// 	console.log(i, friends[i]);
+// }
+
+// // nested loop
+// for (let exercise = 1; exercise < 4; exercise++) {
+// 	console.log(`starting exercise ${exercise}`);
+
+// 	for (let rep = 1; rep < 6; rep++) {
+// 		console.log(`Exercise ${exercise}: lifing weight repetition ${rep} `);
+// 	}
+// }
+
+// THE WHILE LOOP
+
+for (let rep = 1; rep <= 10; rep++) {
+	console.log(`Lifting weights repetition  ${rep}  🏋‍♀️️`);
+}
+
+let rep = 1;
+while (rep <= 10) {
+	console.log(`From while loop: Lifing weights repition ${rep} 🏋‍♀️️`);
+	rep++;
+}
