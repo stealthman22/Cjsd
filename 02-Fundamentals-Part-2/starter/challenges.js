@@ -99,34 +99,78 @@
 
 // Challenge 3
 
-const mark = {
-	fullName : "Mark Miller",
-	mass     : 78,
-	height   : 1.69,
+// const mark = {
+// 	fullName : "Mark Miller",
+// 	mass     : 78,
+// 	height   : 1.69,
 
-	calcBmi  : function () {
-		this.bmi = Math.round(this.mass / this.height ** 2);
-		return this.bmi;
-	},
+// 	calcBmi  : function () {
+// 		this.bmi = Math.round(this.mass / this.height ** 2);
+// 		return this.bmi;
+// 	},
+// };
+
+// const john = {
+// 	fullName : "John Smith",
+// 	mass     : 92,
+// 	height   : 1.95,
+
+// 	calcBmi  : function () {
+// Ghost property
+// 		this.bmi = Math.round(this.mass / this.height ** 2);
+// 		return this.bmi;
+// 	},
+// };
+
+// mark.calcBmi();
+// john.calcBmi();
+
+// const bmiCompare = console.log(`
+// ${
+// 	john.bmi >
+// 	mark.bmi ? `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})` :
+// 	`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})`}
+// `);
+
+// Challenge 4
+const bills = [
+	22,
+	295,
+	176,
+	440,
+	37,
+	105,
+	10,
+	1100,
+	86,
+	52,
+];
+
+const tips = [];
+const total = [];
+
+// function calcTip (bill) {
+// 	if (bill >= 50 && bill <= 300) {
+// 		return bill * 0.15;
+// 	}
+// 	else {
+// 		return bill * 0.2;
+// 	}
+
+// 			const total = tip + bill
+// 		console.log()
+// }
+
+const calcTip = (bill) => {
+	const tip =
+
+			bill >= 50 && bill <= 300 ? bill * 0.15 :
+			bill * 0.2;
+	const total = tip + bill;
+	console.log(
+		`Your tip for this order is ${tip}, and total amount payable is ${total}`
+	);
+	return;
 };
 
-const john = {
-	fullName : "John Smith",
-	mass     : 92,
-	height   : 1.95,
-
-	calcBmi  : function () {
-		this.bmi = Math.round(this.mass / this.height ** 2);
-		return this.bmi;
-	},
-};
-
-mark.calcBmi();
-john.calcBmi();
-
-const bmiCompare = console.log(`
-${
-	john.bmi >
-	mark.bmi ? `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})` :
-	`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})`}
-`);
+for (let i = 0; i < bills.length; i++) {}
