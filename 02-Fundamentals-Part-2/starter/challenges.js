@@ -160,8 +160,10 @@ for (let i = 0; i < bills.length; i++) {
 	// populating the totals array
 	totals.push(tips[i] + bills[i]);
 }
-console.log(tips);
-console.log(totals);
+console.log("The bills", bills, "The tips", tips, "The totals", totals);
+// console.log(`The bills ${bills},
+// The tips ${tips},
+// The totals ${totals}`);
 
 // Bonus
 
@@ -181,3 +183,21 @@ function calcAverage (arr) {
 calcAverage(totals);
 //  now this was dope lol
 // just realized  a parameter can actually hold an array, without doing any crazy setups.
+
+// Jonas way
+// for (let i = 0; i < bills.length; i++) {
+// 	// populating the tips array
+// 	const tip = calcTip(bills[i]);
+// 	tips.push(tip);
+// 	// populating the totals array
+// 	totals.push(tips + bills[i]);
+// }
+
+// function calcAverage (arr) {
+// 	let sum = 0;
+
+// 	for (let i = 0; i < arr.length; i++) {
+// 		sum += arr[i];
+// 	}
+// 	return sum / arr.length;
+// }
