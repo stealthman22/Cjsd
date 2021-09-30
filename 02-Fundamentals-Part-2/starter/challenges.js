@@ -162,7 +162,6 @@ for (let i = 0; i < bills.length; i++) {
 }
 console.log(tips);
 console.log(totals);
-// 	ages.push(2021 - years[i]);
 
 // Bonus
 
@@ -181,3 +180,4 @@ function calcAverage (arr) {
 
 calcAverage(totals);
 //  now this was dope lol
+// just realized  a parameter can actually hold an array, without doing any crazy setups.
