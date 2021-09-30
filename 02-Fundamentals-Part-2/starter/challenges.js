@@ -147,30 +147,37 @@ const bills = [
 ];
 
 const tips = [];
-const total = [];
+const totals = [];
 
-// function calcTip (bill) {
-// 	if (bill >= 50 && bill <= 300) {
-// 		return bill * 0.15;
-// 	}
-// 	else {
-// 		return bill * 0.2;
-// 	}
+const calcTip = (bill) =>
 
-// 			const total = tip + bill
-// 		console.log()
-// }
+		bill >= 50 && bill <= 300 ? bill * 0.15 :
+		bill * 0.2;
 
-const calcTip = (bill) => {
-	const tip =
+for (let i = 0; i < bills.length; i++) {
+	// populating the tips array
+	tips.push(calcTip(bills[i]));
+	// populating the totals array
+	totals.push(tips[i] + bills[i]);
+}
+console.log(tips);
+console.log(totals);
+// 	ages.push(2021 - years[i]);
 
-			bill >= 50 && bill <= 300 ? bill * 0.15 :
-			bill * 0.2;
-	const total = tip + bill;
-	console.log(
-		`Your tip for this order is ${tip}, and total amount payable is ${total}`
-	);
+// Bonus
+
+function calcAverage (arr) {
+	let sum = 0;
+
+	for (let i = 0; i < arr.length; i++) {
+		const totalValue = sum + arr[i];
+		sum = totalValue;
+	}
+	console.log(`The total sum is ${sum}`);
+	const average = sum / arr.length;
+	console.log(`The average is ${average}`);
 	return;
-};
+}
 
-for (let i = 0; i < bills.length; i++) {}
+calcAverage(totals);
+//  now this was dope lol
