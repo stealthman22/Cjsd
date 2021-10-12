@@ -46,18 +46,7 @@ let johnBmi = Math.round(johnWeight / (johnHeight * johnHeight));
 //  console.log('Team Koalas Win')
 // } else if (averageScoreDolphins === averageScoreKoalas) {
 //  console.log('Both teams earned a draw, share the trophy guys!')
-// } else {
-// console.log('That doesnt seem right')
-// }
-// Team dolphins win
-
-// No 3
-// const averageScoreDolphins = Math.round((97 + 112 + 101) / 3);
-// const averageScoreKoalas = Math.round((109 + 95 +123) / 3);
-
-// console.log(`Dolphins averaged  ${averageScoreDolphins},
-// Koalas averaged  ${averageScoreKoalas}`);
-
+how;
 // if (averageScoreDolphins > averageScoreKoalas && averageScoreDolphins > 100) {
 //  console.log('Team Dolphins Win 🏆️')
 // } else if (averageScoreKoalas > averageScoreDolphins && averageScoreKoalas > 100 ) {
@@ -100,13 +89,10 @@ let johnBmi = Math.round(johnWeight / (johnHeight * johnHeight));
 
 const bill = 430;
 
-const tip =
-
-		bill >= 50 && bill <= 300 ? 0.15 * bill :
-		0.2 * bill;
+const tip = bill >= 50 && bill <= 300 ? 0.15 * bill : 0.2 * bill;
 
 const totalValue = tip + bill;
 
 console.log(
-	`The bill is ${bill}, the tip is ${tip}, and the total value due is ${totalValue}`
+  `The bill is ${bill}, the tip is ${tip}, and the total value due is ${totalValue}`
 );
