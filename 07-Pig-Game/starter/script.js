@@ -13,16 +13,20 @@ const btnHold = document.querySelector('.btn--hold');
 const current0El = document.getElementById('current--0');
 const current1El = document.getElementById('current--1');
 
+// Winner text
+
+const winnerText = document.createTextNode('(Winner)');
+
 // Starting conditions
 score0El.textContent = 0;
 score1El.textContent = 0;
 diceEl.classList.add('hidden');
 
 // global current score
-const scores = [0, 0];
+let scores = [0, 0];
 let currentScore = 0;
 let currentPlayer = 0;
-const playerNow = document.querySelector(`.player--${currentPlayer}`);
+// let playerNow = ;
 
 // game state varaible
 let playing = true;
@@ -75,13 +79,55 @@ btnHold.addEventListener('click', function () {
       diceEl.classList.add('hidden');
       // FInish the game
 
-      playerNow.classList.add('player--winner');
+      document
+        .querySelector(`.player--${currentPlayer}`)
+        .classList.add('player--winner');
 
-      playerNow.classList.remove('player--active');
-      console.log('Now playing', playerNow);
+      document
+        .querySelector(`.player--${currentPlayer}`)
+        .classList.remove('player--active');
+      // console.log('Now playing', playerNow);
+      document.getElementById(`name--${currentPlayer}`).appendChild(winnerText);
     } else {
       // Switch to next player
       switchPlayer();
     }
   }
+  console.log(scores);
+});
+
+// Reload the game:
+// grab new game button
+//  Create onclick event for new game button
+// Reset all scores to zero :
+// total scores player 1 and 2,
+// current scores player one and 2
+// hide  dice
+// reset default colour
+// let roll dice and hold buttons work
+
+btnNew.addEventListener('click', function () {
+  // hide dice
+  diceEl.classList.add('hidden');
+  // reset colour
+  document
+    .querySelector(`.player--${currentPlayer}`)
+    .classList.remove('player--winner');
+  document
+    .querySelector(`.player--${currentPlayer}`)
+    .classList.add('player--active');
+  // reset current scores
+  currentScore = 0;
+  current0El.textContent = currentScore;
+  current1El.textContent = currentScore;
+  // reset total scores
+  scores = [0, 0];
+  console.log(scores);
+  score0El.textContent = scores[0];
+  score1El.textContent = scores[1];
+  // console.log(scores);
+  // Remove winner text if there was a previous winner
+  document.getElementById(`name--${currentPlayer}`).removeChild(winnerText);
+  // resume the game
+  playing = true;
 });
