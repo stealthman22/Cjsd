@@ -1,20 +1,20 @@
 'use strict';
 
 // execution context
-const name = 'Joel';
+// const name = 'Joel';
 
-const first = () => {
-  let a = 1;
-  const b = second(7, 9);
-  a = a + b;
-  return a;
-};
+// const first = () => {
+//   let a = 1;
+//   const b = second(7, 9);
+//   a = a + b;
+//   return a;
+// };
 
-function second(x, y) {
-  var c = 2;
-  return c;
-}
-const x = first(x);
+// function second(x, y) {
+//   var c = 2;
+//   return c;
+// }
+// const x = first(x);
 
 /* 
 How the call stack executes thsi codd 
@@ -31,3 +31,39 @@ How the call stack executes thsi codd
 `10. NOw it is resumed and it's value is read and stored.
 11. PROGRAM DONE!`
 */
+function calcAge(birthYear) {
+  const age = 2030 - birthYear;
+  // console.log(Name);
+
+  function printAge() {
+    let output = `${firstName} You are ${age}, born in ${birthYear}`;
+    console.log(output);
+
+    if (birthYear >= 1981 && birthYear <= 1996) {
+      // Creating NEW variable with same name as outer scope
+      const firstName = 'Steven';
+      const str = `Oh, and you're a millenial, ${firstName}`;
+
+      // const str = `Oh, and you're a millenial, ${firstName}`;
+      console.log(str);
+
+      function add(a, b) {
+        // console.log(output, 'here');
+        return a + b;
+      }
+      // Reassigning outer scope's variable!
+      output = 'New Output';
+    }
+
+    console.log(output, 'here');
+  }
+  printAge();
+  return age;
+  // console.log(add);
+}
+
+const firstName = 'Jonas';
+calcAge(1991);
+// printAge()
+
+// name is a special reserved variable name we should not use
