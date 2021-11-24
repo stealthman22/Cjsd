@@ -10,10 +10,10 @@ const restaurant = {
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],                                                                                                                     
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
   order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[]] 
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
   openingHours: {
@@ -32,6 +32,23 @@ const restaurant = {
   },
 };
 
+// Destructuring Objects
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+// destruc objects with different var names
+const {
+  name: resturantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(resturantName, hours, tags);
+
+// Destruc objects with default values
+const { menu = [], starterMenu = [] } = restaurant;
+console.log(menu, starterMenu);
+//  Destruc Arrays
 const arr = [2, 3, 4];
 
 const [x, y, z] = arr;
@@ -44,3 +61,20 @@ console.log(main, secondary);
 [main, secondary] = [secondary, main];
 
 console.log(main, secondary);
+
+// destructuring returned function values immediately
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
+
+const nested = [2, 4, [5, 6]];
+
+// const [i, j] = nested;
+
+// destructing in side of destructuring
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
+
+// setting defult values for unknown arrays
+
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r);
