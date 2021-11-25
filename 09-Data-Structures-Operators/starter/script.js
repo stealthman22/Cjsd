@@ -45,6 +45,7 @@ const {
 } = restaurant;
 console.log(resturantName, hours, tags);
 
+console.log();
 // Destruc objects with default values
 const { menu = [], starterMenu = [] } = restaurant;
 console.log(menu, starterMenu);
