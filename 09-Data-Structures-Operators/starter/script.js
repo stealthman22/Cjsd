@@ -12,10 +12,6 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-
   openingHours: {
     thu: {
       open: 12,
@@ -30,52 +26,96 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '06:50',
+    address,
+  }) {
+    console.log(
+      `Order Received! ${this.starterMenu[starterIndex]} and  ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
+  },
 };
 
-// Destructuring Objects
+// restaurant.orderDelivery({
+//   time: '22:38',
+//   address: 'Via del sole, 21',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
 
-const { name, openingHours, categories } = restaurant;
-console.log(name, openingHours, categories);
+// restaurant.orderDelivery({
+//   address: 'Via del sole, 21',
 
-// destruc objects with different var names
-const {
-  name: resturantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-console.log(resturantName, hours, tags);
+//   starterIndex: 3,
+// });
 
-console.log();
-// Destruc objects with default values
-const { menu = [], starterMenu = [] } = restaurant;
-console.log(menu, starterMenu);
-//  Destruc Arrays
-const arr = [2, 3, 4];
+// // Destructuring Objects
 
-const [x, y, z] = arr;
-console.log(x, y, z);
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
 
-let [main, , secondary] = restaurant.categories;
+// // destruc objects with different var names
+// const {
+//   name: resturantName,
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
+// console.log(resturantName, hours, tags);
 
-console.log(main, secondary);
-// switching destrucuted value
-[main, secondary] = [secondary, main];
+// // Destruc objects with default values
+// const { menu = [], starterMenu = [] } = restaurant;
+// console.log(menu, starterMenu);
 
-console.log(main, secondary);
+// //  Destructuring nested objects
+// const {
+//   fri: { open, close },
+// } = openingHours;
+// console.log(open, close);
 
-// destructuring returned function values immediately
-const [starter, mainCourse] = restaurant.order(2, 0);
-console.log(starter, mainCourse);
+// // Mutating variables when destructuring objects
 
-const nested = [2, 4, [5, 6]];
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
 
-// const [i, j] = nested;
+// // with objects you need to wrap the statement in patenthesis
+// ({ a, b } = obj);
+// console.log(a, b);
 
-// destructing in side of destructuring
-const [i, , [j, k]] = nested;
-console.log(i, j, k);
+// //  Destruc Arrays
+// const arr = [2, 3, 4];
 
-// setting defult values for unknown arrays
+// const [x, y, z] = arr;
+// console.log(x, y, z);
 
-const [p = 1, q = 1, r = 1] = [8, 9];
-console.log(p, q, r);
+// let [main, , secondary] = restaurant.categories;
+
+// console.log(main, secondary);
+// // switching destrucuted value
+// [main, secondary] = [secondary, main];
+
+// console.log(main, secondary);
+
+// // destructuring returned function values immediately
+// const [starter, mainCourse] = restaurant.order(2, 0);
+// console.log(starter, mainCourse);
+
+// const nested = [2, 4, [5, 6]];
+
+// // const [i, j] = nested;
+
+// // destructing in side of destructuring
+// const [i, , [j, k]] = nested;
+// console.log(i, j, k);
+
+// // setting defult values for unknown arrays
+
+// const [p = 1, q = 1, r = 1] = [8, 9];
+// console.log(p, q, r);
