@@ -119,3 +119,17 @@ const restaurant = {
 
 // const [p = 1, q = 1, r = 1] = [8, 9];
 // console.log(p, q, r);
+
+// The Spread Operator
+
+// Without spread
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+// With spread
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci', 'Amala'];
+console.log(newMenu);
