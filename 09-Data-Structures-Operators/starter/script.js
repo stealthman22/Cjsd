@@ -41,53 +41,57 @@ const restaurant = {
       `Order Received! ${this.starterMenu[starterIndex]} and  ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Heare is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
 };
 
-// restaurant.orderDelivery({
-//   time: '22:38',
-//   address: 'Via del sole, 21',
-//   mainIndex: 2,
-//   starterIndex: 2,
-// });
+// method calls
+restaurant.orderDelivery({
+  time: '22:38',
+  address: 'Via del sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
 
-// restaurant.orderDelivery({
-//   address: 'Via del sole, 21',
+restaurant.orderDelivery({
+  address: 'Via del sole, 21',
 
-//   starterIndex: 3,
-// });
+  starterIndex: 3,
+});
 
-// // Destructuring Objects
+// Destructuring Objects
 
-// const { name, openingHours, categories } = restaurant;
-// console.log(name, openingHours, categories);
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
 
-// // destruc objects with different var names
-// const {
-//   name: resturantName,
-//   openingHours: hours,
-//   categories: tags,
-// } = restaurant;
-// console.log(resturantName, hours, tags);
+// destruc objects with different var names
+const {
+  name: resturantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(resturantName, hours, tags);
 
-// // Destruc objects with default values
-// const { menu = [], starterMenu = [] } = restaurant;
-// console.log(menu, starterMenu);
+// Destruc objects with default values
+const { menu = [], starterMenu = [] } = restaurant;
+console.log(menu, starterMenu);
 
-// //  Destructuring nested objects
-// const {
-//   fri: { open, close },
-// } = openingHours;
-// console.log(open, close);
+//  Destructuring nested objects
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
 
-// // Mutating variables when destructuring objects
+// Mutating variables when destructuring objects
 
-// let a = 111;
-// let b = 999;
-// const obj = { a: 23, b: 7, c: 14 };
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
 
-// // with objects you need to wrap the statement in patenthesis
-// ({ a, b } = obj);
-// console.log(a, b);
+// with objects you need to wrap the statement in patenthesis
+({ a, b } = obj);
+console.log(a, b);
 
 // //  Destruc Arrays
 // const arr = [2, 3, 4];
@@ -133,3 +137,35 @@ console.log(newArr);
 
 const newMenu = [...restaurant.mainMenu, 'Gnocci', 'Amala'];
 console.log(newMenu);
+
+// Creating shallow copy of array
+const mainMenuCOpy = [...restaurant.mainMenu];
+
+// Join 2 arrays
+
+const menu2 = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log('join array', menu2);
+
+const str = 'Joel';
+const letters = [...str, '', 'S'];
+console.log(letters);
+
+// inputing data ourselves in spread
+// const ingredients = [
+//   prompt('Lets make pasta! Ingredient 1?'),
+//   prompt(' Ingredient 2?'),
+//   prompt(' Ingredient 3?'),
+// ];
+// console.log(ingredients);
+// Pasiing fucntion values witth spread
+// restaurant.orderPasta(...ingredients);
+
+// ES 2018 spread on objects
+const newRestaurant = { foundIn: 1998, ...restaurant, founder: 'Eyram' };
+console.log(newRestaurant);
+
+// Create shallow object copy with spread, rather than using object assign
+const restaurantCOpy = { ...restaurant };
+restaurantCOpy.name = 'Chicken Inn';
+console.log(restaurantCOpy.name);
+console.log(restaurant.name);
