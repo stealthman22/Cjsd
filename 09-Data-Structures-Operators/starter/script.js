@@ -275,4 +275,38 @@ for (const [i, el] of menu.entries()) {
 // ENHANCED OBJECT LITERALS
 // 3 new ways to write object literas
 
+// LOGICAL ASSIGNMENT OPERATOR
+const rest1 = {
+  name: 'Capri',
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'Chicken Inn',
+  owner: 'Jason Lambo',
+};
+
+// or short circuit can help set default value
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// using logical OR assignment
+// this can still run into the 0-falsy error
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// using nullish asssignment operator to correct the 0-falsy error
+
+// And assignment operator
+// without assignment
+rest2.owner = rest2.owner && '<Anonymous>';
+// rest1.owner = rest1.owner && '<Anonymous>';
+// with assignment
+rest1.owner &&= '<Anonymous>';
+console.log(rest1, rest2);
 // OPTIONAL CHAINING
+// without optional chaining returns an error
+// console.log(restaurant.openingHours.mon.open);
+
+// with optional chaining
+console.log(restaurant.openingHours.mon?.open);
