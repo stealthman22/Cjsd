@@ -130,7 +130,7 @@ restaurant.orderDelivery({
 
 // The Spread Operator
 
-// Without spread
+// // Without spread
 // const arr = [7, 8, 9];
 // const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 // console.log(badNewArr);
@@ -154,17 +154,17 @@ restaurant.orderDelivery({
 // const letters = [...str, '', 'S'];
 // console.log(letters);
 
-// inputing data ourselves in spread
+// // inputing data ourselves in spread
 // const ingredients = [
 //   prompt('Lets make pasta! Ingredient 1?'),
 //   prompt(' Ingredient 2?'),
 //   prompt(' Ingredient 3?'),
 // ];
 // console.log(ingredients);
-// Pasiing fucntion values witth spread
+// // Pasiing fucntion values witth spread
 // restaurant.orderPasta(...ingredients);
 
-// ES 2018 spread on objects
+// // ES 2018 spread on objects
 // const newRestaurant = { foundIn: 1998, ...restaurant, founder: 'Eyram' };
 // console.log(newRestaurant);
 
@@ -174,10 +174,10 @@ restaurant.orderDelivery({
 // console.log(restaurantCOpy.name);
 // console.log(restaurant.name);
 
-// //  The rest pattern
-// // WITH DESTRUCTURING
-// // Spread because ... is on right
-// const arr = [1, , ...[3, 4]];
+// // //  The rest pattern
+// // // WITH DESTRUCTURING
+// // // Spread because ... is on right
+// // const arr = [1, , ...[3, 4]];
 
 // //  Rest pattern  because ... is on left
 // const [a, b, ...others] = [1, 2, 3, 4, 5];
@@ -217,33 +217,33 @@ restaurant.orderDelivery({
 
 // SHORT CIRCUITING
 
-console.log('----OR----');
-console.log(3 || 'Jonas');
-console.log('' || 'Jonas');
-console.log(true || 0);
-console.log(undefined || null);
+// console.log('----OR----');
+// console.log(3 || 'Jonas');
+// console.log('' || 'Jonas');
+// console.log(true || 0);
+// console.log(undefined || null);
 
-console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+// console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 
-restaurant.numGuests = 0;
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1);
+// restaurant.numGuests = 0;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
 
-const guest2 = restaurant.numGuests || 10;
-console.log(guest2);
+// const guest2 = restaurant.numGuests || 10;
+// console.log(guest2);
 
-console.log('----AND----');
-console.log(0 && 'Joel');
-console.log(9 && 'Joel');
-console.log('Hello' && 23 && null && 'Jonas');
+// console.log('----AND----');
+// console.log(0 && 'Joel');
+// console.log(9 && 'Joel');
+// console.log('Hello' && 23 && null && 'Jonas');
 
-// Practical Example
-if (restaurant.orderPizza) {
-  restaurant.orderPizza('mushroom', 'spinach');
-}
+// // Practical Example
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushroom', 'spinach');
+// }
 
-restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach');
+// restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach');
 
-// Nullish Coalescing Operator
-const guestCorrect = restaurant.numGuests ?? 10;
-console.log('nullish', guestCorrect);
+// // Nullish Coalescing Operator
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log('nullish', guestCorrect);
