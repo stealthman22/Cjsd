@@ -19,7 +19,8 @@ const openingHours = {
     close: 23,
   },
   //  Computing property names
-  [`day-${2 + 4}`]: {
+  // [`day-${2 + 3}`]
+  [weekdays[5]]: {
     open: 0, // Open 24 hours
     close: 24,
   },
@@ -183,7 +184,7 @@ restaurant.orderDelivery({
 // // const arr = [1, , ...[3, 4]];
 
 // //  Rest pattern  because ... is on left
-// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// const [a, b, ...others] = [1, 2, 3, 4, 5];[`day-${2 + 3}`]
 // console.log(a, b, others);
 
 // // Spread and rest at the same time
