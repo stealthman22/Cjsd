@@ -254,87 +254,124 @@ restaurant.orderDelivery({
 // console.log('nullish', guestCorrect);
 
 // THE FOR OF LOOP
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-//item is always the current element in each iteration
-for (const item of menu) console.log(item);
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// //item is always the current element in each iteration
+// for (const item of menu) console.log(item);
 
-//  Getting current index is quite tricky
-//  entries expands everything into new arrays
-// for (const item of menu.entries()) {
-//   console.log(`${item[0] + 1}:${item[1]}`);
+// //  Getting current index is quite tricky
+// //  entries expands everything into new arrays
+// // for (const item of menu.entries()) {
+// //   console.log(`${item[0] + 1}:${item[1]}`);
+// // }
+
+// // newer syntax using destructuring
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}:${el}`);
 // }
-
-// newer syntax using destructuring
-for (const [i, el] of menu.entries()) {
-  console.log(`${i + 1}:${el}`);
-}
-//  it is a typeof object
-// console.log(typeof menu.entries());
+// //  it is a typeof object
+// // console.log(typeof menu.entries());
 
 // console.log(...menu.entries());
 
-// ENHANCED OBJECT LITERALS
-// 3 new ways to write object literas
+// // ENHANCED OBJECT LITERALS
+// // 3 new ways to write object literas
 
-// LOGICAL ASSIGNMENT OPERATOR
-const rest1 = {
-  name: 'Capri',
-  numGuests: 0,
-};
+// // LOGICAL ASSIGNMENT OPERATOR
+// const rest1 = {
+//   name: 'Capri',
+//   numGuests: 0,
+// };
 
-const rest2 = {
-  name: 'Chicken Inn',
-  owner: 'Jason Lambo',
-};
+// const rest2 = {
+//   name: 'Chicken Inn',
+//   owner: 'Jason Lambo',
+// };
 
-// or short circuit can help set default value
-// rest1.numGuests = rest1.numGuests || 10;
-// rest2.numGuests = rest2.numGuests || 10;
+// // or short circuit can help set default value
+// // rest1.numGuests = rest1.numGuests || 10;
+// // rest2.numGuests = rest2.numGuests || 10;
 
-// using logical OR assignment
-// this can still run into the 0-falsy error
-rest1.numGuests ??= 10;
-rest2.numGuests ??= 10;
+// // using logical OR assignment
+// // this can still run into the 0-falsy error
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
 
-// using nullish asssignment operator to correct the 0-falsy error
+// // using nullish asssignment operator to correct the 0-falsy error
 
-// And assignment operator
-// without assignment
-rest2.owner = rest2.owner && '<Anonymous>';
-// rest1.owner = rest1.owner && '<Anonymous>';
-// with assignment
-rest1.owner &&= '<Anonymous>';
-console.log(rest1, rest2);
-// OPTIONAL CHAINING
-// without optional chaining returns an error
-// console.log(restaurant.openingHours.mon.open);
+// // And assignment operator
+// // without assignment
+// rest2.owner = rest2.owner && '<Anonymous>';
+// // rest1.owner = rest1.owner && '<Anonymous>';
+// // with assignment
+// rest1.owner &&= '<Anonymous>';
+// console.log(rest1, rest2);
+// // OPTIONAL CHAINING
+// // without optional chaining returns an error
+// // console.log(restaurant.openingHours.mon.open);
 
-// with optional chaining
-console.log(restaurant.openingHours.mon?.open);
+// // with optional chaining
+// console.log(restaurant.openingHours.mon?.open);
 
-// Multiple optional chaining
-console.log(restaurant.openingHours?.mon?.open);
+// // Multiple optional chaining
+// console.log(restaurant.openingHours?.mon?.open);
 
-// Real world example of Optional chaining
-const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-for (const day of days) {
-  // having an error with 0 value
-  const open = restaurant.openingHours[day]?.open ?? `closed`;
-  console.log(`On ${day}, we open at ${open}`);
+// // Real world example of Optional chaining
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+// for (const day of days) {
+//   // having an error with 0 value
+//   const open = restaurant.openingHours[day]?.open ?? `closed`;
+//   console.log(`On ${day}, we open at ${open}`);
+// }
+
+// // optional chaining with methods
+// console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+// console.log(restaurant.orderKokonte?.(0, 1) ?? 'Method does not exist');
+
+// // optional chaining with arrays
+// const users = [{ name: 'Jonas', email: 'hellojoe.com' }];
+
+// console.log(users[0]?.name ?? 'User array empty');
+
+// // without optional chaining
+// if (users.length > 0) {
+//   console.log(users[0].name);
+// } else {
+//   console.log('User array empty');
+// }
+
+// LOOPING OVER OBJECTS
+
+// Looping over property names only (keys)
+
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+for (const day of Object.keys(openingHours)) {
+  console.log(day);
 }
 
-// optional chaining with methods
-console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
-console.log(restaurant.orderKokonte?.(0, 1) ?? 'Method does not exist');
+// Using the object loop trick to find how many properties are in the object
+let openStr = `We are open for  ${properties.length} days:`;
+for (const day of properties) {
+  // openStr + day = openStr
+  openStr += `${day},`;
+}
 
-// optional chaining with arrays
-const users = [{ name: 'Jonas', email: 'hellojoe.com' }];
+console.log(openStr);
 
-console.log(users[0]?.name ?? 'User array empty');
+// Looping over property values only
+const values = Object.values(openingHours);
+//  returns all the values contained in an array
+console.log(values);
 
-// without optional chaining
-if (users.length > 0) {
-  console.log(users[0].name);
-} else {
-  console.log('User array empty');
+// Looping over entires object (entries)
+// Unlike arrays entries cannot be called on the object itself
+
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+// Destructuring right in the for of loop parameter
+//  we can change property name as we desire
+for (const [day, { open: up, close: down }] of entries) {
+  console.log(`On ${day} we open at ${up} and close at ${down}`);
 }
