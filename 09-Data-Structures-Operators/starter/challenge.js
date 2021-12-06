@@ -1,43 +1,46 @@
-// const game = {
-//   team1: 'Bayern Munich',
-//   team2: 'Borrussia Dortmund',
-//   players: [
-//     [
-//       'Neuer',
-//       'Pavard',
-//       'Martinez',
-//       'Alaba',
-//       'Davies',
-//       'Kimmich',
-//       'Goretzka',
-//       'Coman',
-//       'Muller',
-//       'Gnarby',
-//       'Lewandowski',
-//     ],
-//     [
-//       'Burki',
-//       'Schulz',
-//       'Hummels',
-//       'Akanji',
-//       'Hakimi',
-//       'Weigl',
-//       'Witsel',
-//       'Hazard',
-//       'Brandt',
-//       'Sancho',
-//       'Gotze',
-//     ],
-//   ],
-//   score: '4:0',
-//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-//   date: 'Nov 9th, 2037',
-//   odds: {
-//     team1: 1.33,
-//     x: 3.25,
-//     team2: 6.5,
-//   },
-// };
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+// console.log(Object.entries(scorers[0]));
+
 // // 1. Create one player array for each team (variables 'players1' and
 // // 'players2')
 // // 2. The first player in any player array is the goalkeeper and the others are field
@@ -105,3 +108,51 @@
 
 // console.log(team1 < team2 && `Bayern Munich is more likely to win `);
 // console.log(team2 < team1 && `Borrusia Dortmund is more likely to win`);
+
+// CHALLENGE 2
+
+// Num 1
+const goalsScored = game.scored;
+
+for (const [i, el] of goalsScored.entries()) {
+  console.log(' Num 1', `Goal Number ${i + 1}: ${el}`);
+}
+
+//  No 2
+
+const oddsValues = Object.values(game.odds);
+let averageOdds = 0;
+for (const el of oddsValues) {
+  averageOdds += el;
+}
+
+// new operator found lol
+averageOdds /= oddsValues.length;
+console.log(' Num 2', `The average odds is ${averageOdds}`);
+
+// No 3
+// console.log(' Num 3', `Odd of victory ${game.team1}: ${oddsValues[0]}`);
+// console.log(`Odd of victory ${game.team2}: ${oddsValues[2]}`);
+// console.log(`Odd of  draw: ${oddsValues[1]}`);
+
+// Jonas better solution
+
+const oddsObject = Object.entries(game.odds);
+// console.log(oddsObject);
+for (const [team, odds] of oddsObject) {
+  const teamStr = team === x ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr}... ${odds}`);
+}
+
+// //  No 4
+const ballers = game.players[0];
+const ballers2 = game.players[1];
+const playersScored = game.scored;
+
+const scorers = {
+  [ballers[10]]: 5,
+  [ballers[9]]: 2,
+  [ballers2[2]]: 1,
+};
+
+console.log(Object.entries('No 4', scorers));

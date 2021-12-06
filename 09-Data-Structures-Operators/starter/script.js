@@ -25,6 +25,7 @@ const openingHours = {
     close: 24,
   },
 };
+
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -258,13 +259,13 @@ restaurant.orderDelivery({
 // //item is always the current element in each iteration
 // for (const item of menu) console.log(item);
 
-// //  Getting current index is quite tricky
-// //  entries expands everything into new arrays
-// // for (const item of menu.entries()) {
-// //   console.log(`${item[0] + 1}:${item[1]}`);
-// // }
+//  Getting current index is quite tricky
+//  entries expands everything into new arrays
+// for (const item of menu.entries()) {
+//   console.log(`${item[0] + 1}:${item[1]}`);
+// }
 
-// // newer syntax using destructuring
+// newer syntax using destructuring
 // for (const [i, el] of menu.entries()) {
 //   console.log(`${i + 1}:${el}`);
 // }
@@ -343,35 +344,35 @@ restaurant.orderDelivery({
 
 // Looping over property names only (keys)
 
-const properties = Object.keys(openingHours);
-console.log(properties);
+// const properties = Object.keys(openingHours);
+// console.log(properties);
 
-for (const day of Object.keys(openingHours)) {
-  console.log(day);
-}
+// for (const day of Object.keys(openingHours)) {
+//   console.log(day);
+// }
 
-// Using the object loop trick to find how many properties are in the object
-let openStr = `We are open for  ${properties.length} days:`;
-for (const day of properties) {
-  // openStr + day = openStr
-  openStr += `${day},`;
-}
+// // Using the object loop trick to find how many properties are in the object
+// let openStr = `We are open for  ${properties.length} days:`;
+// for (const day of properties) {
+//   // openStr + day = openStr
+//   openStr += `${day},`;
+// }
 
-console.log(openStr);
+// console.log(openStr);
 
-// Looping over property values only
-const values = Object.values(openingHours);
-//  returns all the values contained in an array
-console.log(values);
+// // Looping over property values only
+// const values = Object.values(openingHours);
+// //  returns all the values contained in an array
+// console.log(values);
 
-// Looping over entires object (entries)
-// Unlike arrays entries cannot be called on the object itself
+// // Looping over entires object (entries)
+// // Unlike arrays entries cannot be called on the object itself
 
-const entries = Object.entries(openingHours);
-console.log(entries);
+// const entries = Object.entries(openingHours);
+// console.log(entries);
 
-// Destructuring right in the for of loop parameter
-//  we can change property name as we desire
-for (const [day, { open: up, close: down }] of entries) {
-  console.log(`On ${day} we open at ${up} and close at ${down}`);
-}
+// // Destructuring right in the for of loop parameter
+// //  we can change property name as we desire
+// for (const [day, { open: up, close: down }] of entries) {
+//   console.log(`On ${day} we open at ${up} and close at ${down}`);
+// }
