@@ -136,12 +136,13 @@ console.log(' Num 2', `The average odds is ${averageOdds}`);
 // console.log(`Odd of  draw: ${oddsValues[1]}`);
 
 // Jonas better solution
-
+/
 const oddsObject = Object.entries(game.odds);
 // console.log(oddsObject);
 for (const [team, odds] of oddsObject) {
-  const teamStr = team === x ? 'draw' : `victory ${game[team]}`;
-  console.log(`Odd of ${teamStr}... ${odds}`);
+ // game[team] is rather clever, it used the actual value (key in this case)  of the team param, to loop the team1 and team2 properties  at the beginning of the object 
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odds}`);
 }
 
 // //  No 4
