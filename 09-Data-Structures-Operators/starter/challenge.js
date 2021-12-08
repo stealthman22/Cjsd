@@ -112,48 +112,48 @@ const game = {
 // CHALLENGE 2
 
 // Num 1
-const goalsScored = game.scored;
+// const goalsScored = game.scored;
 
-for (const [i, el] of goalsScored.entries()) {
-  console.log(' Num 1', `Goal Number ${i + 1}: ${el}`);
-}
+// for (const [i, el] of goalsScored.entries()) {
+//   console.log(' Num 1', `Goal Number ${i + 1}: ${el}`);
+// }
 
-//  No 2
+// //  No 2
 
-const oddsValues = Object.values(game.odds);
-let averageOdds = 0;
-for (const el of oddsValues) {
-  averageOdds += el;
-}
+// const oddsValues = Object.values(game.odds);
+// let averageOdds = 0;
+// for (const el of oddsValues) {
+//   averageOdds += el;
+// }
 
-// new operator found lol
-averageOdds /= oddsValues.length;
-console.log(' Num 2', `The average odds is ${averageOdds}`);
+// // new operator found lol
+// averageOdds /= oddsValues.length;
+// console.log(' Num 2', `The average odds is ${averageOdds}`);
 
-// No 3
-// console.log(' Num 3', `Odd of victory ${game.team1}: ${oddsValues[0]}`);
-// console.log(`Odd of victory ${game.team2}: ${oddsValues[2]}`);
-// console.log(`Odd of  draw: ${oddsValues[1]}`);
+// // No 3
+// // console.log(' Num 3', `Odd of victory ${game.team1}: ${oddsValues[0]}`);
+// // console.log(`Odd of victory ${game.team2}: ${oddsValues[2]}`);
+// // console.log(`Odd of  draw: ${oddsValues[1]}`);
 
-// Jonas better solution
-/
-const oddsObject = Object.entries(game.odds);
-// console.log(oddsObject);
-for (const [team, odds] of oddsObject) {
- // game[team] is rather clever, it used the actual value (key in this case)  of the team param, to loop the team1 and team2 properties  at the beginning of the object 
-  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
-  console.log(`Odd of ${teamStr} ${odds}`);
-}
+// // Jonas better solution
 
-// //  No 4
-const ballers = game.players[0];
-const ballers2 = game.players[1];
-const playersScored = game.scored;
+// const oddsObject = Object.entries(game.odds);
+// // console.log(oddsObject);
+// for (const [team, odds] of oddsObject) {
+//   // game[team] is rather clever, it used the actual value (key in this case)  of the team param, to loop the team1 and team2 properties  at the beginning of the object
+//   const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+//   console.log(`Odd of ${teamStr} ${odds}`);
+// }
 
-const scorers = {
-  [ballers[10]]: 5,
-  [ballers[9]]: 2,
-  [ballers2[2]]: 1,
-};
+// // //  No 4
+// const ballers = game.players[0];
+// const ballers2 = game.players[1];
+// const playersScored = game.scored;
 
-console.log(Object.entries('No 4', scorers));
+// const scorers = {
+//   [ballers[10]]: 5,
+//   [ballers[9]]: 2,
+//   [ballers2[2]]: 1,
+// };
+
+// console.log(Object.entries('No 4', scorers));

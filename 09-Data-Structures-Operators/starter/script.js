@@ -376,3 +376,64 @@ restaurant.orderDelivery({
 // for (const [day, { open: up, close: down }] of entries) {
 //   console.log(`On ${day} we open at ${up} and close at ${down}`);
 // }
+
+// SETS
+
+// The new constructor is used to create sets
+const orderedSet = new Set(['pasta', 'pizza', 'pasta', 'pitta', 'sharwama']);
+console.log(orderedSet);
+
+// elements were supposed to expand automatically since strings are iterables but didnt
+console.log(new Set(['Jonas']));
+
+// finding the size of sets
+console.log(orderedSet.size);
+
+// check if an element is in a set
+console.log(orderedSet.has('[pizza'));
+
+// adding new element to ad set
+
+orderedSet.add('Sugar bread');
+
+// delete element
+orderedSet.delete('pizza');
+// console.log(orderedSet);
+
+// clearing a set
+// orderedSet.clear();
+// console.log(orderedSet);
+
+// looping over sets
+for (const order of orderedSet) {
+  console.log(order);
+}
+
+// use cases
+const staff = ['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter'];
+
+const staffUnique = new Set(staff);
+
+const newStaff = [...staffUnique];
+// or
+// const newStaff = [...new Set(staff)];
+console.log(newStaff);
+console.log(
+  new Set(['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter']).size
+);
+
+console.log(new Set('alarajoel').size);
+
+// MAPS
+const rest = new Map();
+// this updates and returns the maps
+rest.set('name', 'Classic Man');
+rest.set(1, 'firenze');
+rest.set(2, 'Lisbon');
+
+// multiple set calls
+rest
+  .set('categories', ['naija', 'ghanaian', 'italiano'])
+  .set('open', 15)
+  .set('close', ' 25');
+console.log(rest, typeof rest);
