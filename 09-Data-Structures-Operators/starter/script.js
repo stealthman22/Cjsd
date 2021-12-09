@@ -436,4 +436,4 @@ rest
   .set('categories', ['naija', 'ghanaian', 'italiano'])
   .set('open', 15)
   .set('close', ' 25');
-console.log(rest, typeof rest);
+// console.log(rest, typeof rest);
