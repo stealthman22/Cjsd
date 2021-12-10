@@ -379,61 +379,134 @@ restaurant.orderDelivery({
 
 // SETS
 
-// The new constructor is used to create sets
-const orderedSet = new Set(['pasta', 'pizza', 'pasta', 'pitta', 'sharwama']);
-console.log(orderedSet);
-
-// elements were supposed to expand automatically since strings are iterables but didnt
-console.log(new Set(['Jonas']));
-
-// finding the size of sets
-console.log(orderedSet.size);
-
-// check if an element is in a set
-console.log(orderedSet.has('[pizza'));
-
-// adding new element to ad set
-
-orderedSet.add('Sugar bread');
-
-// delete element
-orderedSet.delete('pizza');
+// // The new constructor is used to create sets
+// const orderedSet = new Set(['pasta', 'pizza', 'pasta', 'pitta', 'sharwama']);
 // console.log(orderedSet);
 
-// clearing a set
-// orderedSet.clear();
-// console.log(orderedSet);
+// // elements were supposed to expand automatically since strings are iterables but didnt
+// console.log(new Set(['Jonas']));
 
-// looping over sets
-for (const order of orderedSet) {
-  console.log(order);
+// // finding the size of sets
+// console.log(orderedSet.size);
+
+// // check if an element is in a set
+// console.log(orderedSet.has('[pizza'));
+
+// // adding new element to ad set
+
+// orderedSet.add('Sugar bread');
+
+// // delete element
+// orderedSet.delete('pizza');
+// // console.log(orderedSet);
+
+// // clearing a set
+// // orderedSet.clear();
+// // console.log(orderedSet);
+
+// // looping over sets
+// for (const order of orderedSet) {
+//   console.log(order);
+// }
+
+// // use cases
+// const staff = ['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter'];
+
+// const staffUnique = new Set(staff);
+
+// const newStaff = [...staffUnique];
+// // or
+// // const newStaff = [...new Set(staff)];
+// console.log(newStaff);
+// console.log(
+//   new Set(['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter']).size
+// );
+
+// console.log(new Set('alarajoel').size);
+
+// // MAPS
+// const rest = new Map();
+// // this updates and returns the maps
+// rest.set('name', 'Classic Man');
+// rest.set(1, 'firenze');
+// rest.set(2, 'Lisbon');
+
+// // multiple set calls
+// rest
+//   .set('categories', ['naija', 'ghanaian', 'italiano'])
+//   .set('open', 15)
+//   .set('close', ' 25')
+//   .set(true, 'We are open')
+//   .set(false, 'We are closed');
+
+// console.log(rest.get('name'));
+
+// const time = 21;
+// // Retrieving based on the value of another key
+// //  this conditional retrieval will map to one of our boolean keys
+// //  This pattern is quite unreadable tho
+// console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// //  Checking for keys in a map
+// console.log(rest.has('categories'));
+
+// // Deleting pairs in a map via the key
+// console.log(rest.delete(2));
+
+// //  Arrays as keys (Typeof objects )
+// // Ensure to house in a variable before referencing in the Map
+// const arr = [1, 3];
+// rest.set(arr, 'Test');
+// console.log(rest.get(arr));
+
+// //  We can use DOM elements as Map keys (they are objects anyway)
+// rest.set(document.querySelector('h1'), 'Heading');
+
+// // rest.set({ age: 6 }, 'Jeol');
+// // console.log(rest.get({ age: 6 }));
+// // checking the size fo a map
+// console.log(rest.size);
+// console.log(rest);
+
+// ITERATING OVER MAPS
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct 😁️'],
+  [false, 'Try again 😡️'],
+]);
+console.log(question);
+
+console.log(question.get('question'));
+//  looping over maps is best done with destructuring
+for (const [key, value] of question) {
+  typeof key === 'number' && console.log(`Answer: ${key} ${value}`);
 }
 
-// use cases
-const staff = ['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter'];
+// const answer = Number(prompt('Your answer'));
+const answer = 3;
+// if (answer === 3) {
+//   console.log(question.get(true));
+// } else {
+//   console.log(question.get(false));
+// }
+// OR
+// deciding what to get from the map based on conditional
+console.log(question.get(question.get('correct') === answer));
 
-const staffUnique = new Set(staff);
+// console.log(answer);
 
-const newStaff = [...staffUnique];
-// or
-// const newStaff = [...new Set(staff)];
-console.log(newStaff);
-console.log(
-  new Set(['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter']).size
-);
+// Convert object to map
+// console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
 
-console.log(new Set('alarajoel').size);
-
-// MAPS
-const rest = new Map();
-// this updates and returns the maps
-rest.set('name', 'Classic Man');
-rest.set(1, 'firenze');
-rest.set(2, 'Lisbon');
-
-// multiple set calls
-rest
-  .set('categories', ['naija', 'ghanaian', 'italiano'])
-  .set('open', 15)
-  .set('close', ' 25');
-// console.log(rest, typeof rest);
+// Convert Map to aray
+const newArrayFromMap = [...question];
+console.log(newArrayFromMap);
+console.log(question.entries());
+console.log(question.keys());
+console.log(...question.values());

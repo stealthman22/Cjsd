@@ -145,7 +145,9 @@ const game = {
 //   console.log(`Odd of ${teamStr} ${odds}`);
 // }
 
-// // //  No 4
+// //  No 4
+// First attempt
+
 // const ballers = game.players[0];
 // const ballers2 = game.players[1];
 // const playersScored = game.scored;
@@ -156,4 +158,66 @@ const game = {
 //   [ballers2[2]]: 1,
 // };
 
-// console.log(Object.entries('No 4', scorers));
+// We can use the games.scored array, it contains all the info we need
+const gameScore = game.scored;
+console.log(gameScore);
+
+const scoreCount = function (arr) {
+  let counts = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    // this pushes the elements from the arr into the object automatically
+    // if (counts[arr[i]]) {
+    //   counts[arr[i]] += 1;
+    // } else {
+    //   counts[arr[i]] = 1;
+    // }
+    counts[arr[i]] ? (counts[arr[i]] += 1) : (counts[arr[i]] = 1);
+  }
+  console.log(counts);
+};
+
+scoreCount(gameScore);
+
+// Code challenge 3
+const gameEvents = new Map([
+  [17, '⚽ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽ GOAL'],
+  [80, '⚽ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
+// No 1
+
+const eventsArray = [...new Set(gameEvents.values())];
+console.log(eventsArray);
+
+// No 2
+gameEvents.delete(64);
+console.log(gameEvents);
+
+// No 4
+let gameEventsKeys = gameEvents.keys();
+
+let gameEventsKeysArray = [];
+
+for (let key of gameEventsKeys) {
+  if (key < 45) {
+    key = `[FIRST HALF] ${key}:`;
+  } else {
+    key = `[SECOND HALF] ${key}:`;
+  }
+  gameEventsKeysArray.push(key);
+}
+
+gameEventsKeys = gameEventsKeysArray;
+console.log(gameEventsKeys);
+
+console.log(gameEvents);
