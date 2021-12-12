@@ -164,16 +164,9 @@ console.log(gameScore);
 
 const scoreCount = function (arr) {
   let counts = {};
-
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++)
     // this pushes the elements from the arr into the object automatically
-    // if (counts[arr[i]]) {
-    //   counts[arr[i]] += 1;
-    // } else {
-    //   counts[arr[i]] = 1;
-    // }
     counts[arr[i]] ? (counts[arr[i]] += 1) : (counts[arr[i]] = 1);
-  }
   console.log(counts);
 };
 
@@ -201,23 +194,16 @@ console.log(eventsArray);
 
 // No 2
 gameEvents.delete(64);
-console.log(gameEvents);
+// console.log(gameEvents);
 
 // No 4
-let gameEventsKeys = gameEvents.keys();
 
-let gameEventsKeysArray = [];
+let gameEventsArr = [...gameEvents.entries()];
 
-for (let key of gameEventsKeys) {
+for (let [key, val] of gameEventsArr) {
   if (key < 45) {
     key = `[FIRST HALF] ${key}:`;
   } else {
     key = `[SECOND HALF] ${key}:`;
   }
-  gameEventsKeysArray.push(key);
 }
-
-gameEventsKeys = gameEventsKeysArray;
-console.log(gameEventsKeys);
-
-console.log(gameEvents);

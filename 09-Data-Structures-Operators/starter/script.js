@@ -424,7 +424,7 @@ restaurant.orderDelivery({
 
 // console.log(new Set('alarajoel').size);
 
-// // MAPS
+// MAPS
 // const rest = new Map();
 // // this updates and returns the maps
 // rest.set('name', 'Classic Man');
@@ -469,44 +469,44 @@ restaurant.orderDelivery({
 // console.log(rest);
 
 // ITERATING OVER MAPS
-const question = new Map([
-  ['question', 'What is the best programming language in the world?'],
-  [1, 'C'],
-  [2, 'Java'],
-  [3, 'JavaScript'],
-  ['correct', 3],
-  [true, 'Correct 😁️'],
-  [false, 'Try again 😡️'],
-]);
-console.log(question);
+// const question = new Map([
+//   ['question', 'What is the best programming language in the world?'],
+//   [1, 'C'],
+//   [2, 'Java'],
+//   [3, 'JavaScript'],
+//   ['correct', 3],
+//   [true, 'Correct 😁️'],
+//   [false, 'Try again 😡️'],
+// ]);
+// console.log(question);
 
-console.log(question.get('question'));
-//  looping over maps is best done with destructuring
-for (const [key, value] of question) {
-  typeof key === 'number' && console.log(`Answer: ${key} ${value}`);
-}
+// console.log(question.get('question'));
+// //  looping over maps is best done with destructuring
+// for (const [key, value] of question) {
+//   typeof key === 'number' && console.log(`Answer: ${key} ${value}`);
+// }
 
 // const answer = Number(prompt('Your answer'));
-const answer = 3;
-// if (answer === 3) {
-//   console.log(question.get(true));
-// } else {
-//   console.log(question.get(false));
-// }
-// OR
-// deciding what to get from the map based on conditional
-console.log(question.get(question.get('correct') === answer));
+// const answer = 3;
+// // if (answer === 3) {
+// //   console.log(question.get(true));
+// // } else {
+// //   console.log(question.get(false));
+// // }
+// // OR
+// // deciding what to get from the map based on conditional
+// console.log(question.get(question.get('correct') === answer));
 
-// console.log(answer);
+// // console.log(answer);
 
-// Convert object to map
-// console.log(Object.entries(openingHours));
-const hoursMap = new Map(Object.entries(openingHours));
-// console.log(hoursMap);
+// // Convert object to map
+// // console.log(Object.entries(openingHours));
+// const hoursMap = new Map(Object.entries(openingHours));
+// // console.log(hoursMap);
 
-// Convert Map to aray
-const newArrayFromMap = [...question];
-console.log(newArrayFromMap);
-console.log(question.entries());
-console.log(question.keys());
-console.log(...question.values());
+// // Convert Map to aray
+// const newArrayFromMap = [...question];
+// console.log(newArrayFromMap);
+// console.log(question.entries());
+// console.log(question.keys());
+// console.log(...question.values());
