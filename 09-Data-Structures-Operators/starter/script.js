@@ -510,3 +510,5 @@ restaurant.orderDelivery({
 // console.log(question.entries());
 // console.log(question.keys());
 // console.log(...question.values());
+
+// WORKING WITH STRINGS

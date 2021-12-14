@@ -196,14 +196,20 @@ console.log(eventsArray);
 gameEvents.delete(64);
 // console.log(gameEvents);
 
+// NO 3
+const gameEventsKeys = [...gameEvents.keys()];
+//  in js to use negative index to grab array elements you have to use the at method
+let fullGameTime = gameEventsKeys.at(-1);
+console.log(fullGameTime);
+console.log(`An event happened, on
+average, every ${Math.trunc(fullGameTime / gameEvents.size)} minutes`);
+
 // No 4
-
-let gameEventsArr = [...gameEvents.entries()];
-
-for (let [key, val] of gameEventsArr) {
-  if (key < 45) {
-    key = `[FIRST HALF] ${key}:`;
-  } else {
-    key = `[SECOND HALF] ${key}:`;
-  }
+let el;
+// You should use more specific names for your iterators not generic ones
+for (const [key, val] of gameEvents) {
+  key < 45
+    ? (el = `[FIRST HALF] ${key}: ${val}`)
+    : (el = `[SECOND HALF] ${key}: ${val}`);
+  console.log(el);
 }
