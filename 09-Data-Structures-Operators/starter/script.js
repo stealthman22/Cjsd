@@ -512,3 +512,30 @@ restaurant.orderDelivery({
 // console.log(...question.values());
 
 // WORKING WITH STRINGS
+const airline = 'Ghana Airlines';
+const plane = 'A320';
+
+// getting the character of a string at a certain position
+console.log(plane[0]);
+console.log('B737'[0]);
+
+// we can read the length of strings
+console.log(airline.length);
+
+// Sting methods
+
+// indexOf
+console.log(airline.indexOf('r'));
+// check last occurence of a character
+console.log(airline.lastIndexOf('i'));
+
+// word search
+console.log(airline.indexOf('portugal'));
+
+// Extracting parts of a strings using the slice method
+console.log(airline.slice(5));
+console.log(airline.slice(5, 9));
+
+//  extracting first word
+console.log(airline.slice(0, airline.indexOf('')));
+console.log(airline.slice(airline.lastIndexOf('')));

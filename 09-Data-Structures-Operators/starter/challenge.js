@@ -159,57 +159,57 @@ const game = {
 // };
 
 // We can use the games.scored array, it contains all the info we need
-const gameScore = game.scored;
-console.log(gameScore);
+// const gameScore = game.scored;
+// console.log(gameScore);
 
-const scoreCount = function (arr) {
-  let counts = {};
-  for (let i = 0; i < arr.length; i++)
-    // this pushes the elements from the arr into the object automatically
-    counts[arr[i]] ? (counts[arr[i]] += 1) : (counts[arr[i]] = 1);
-  console.log(counts);
-};
+// const scoreCount = function (arr) {
+//   let counts = {};
+//   for (let i = 0; i < arr.length; i++)
+//     // this pushes the elements from the arr into the object automatically
+//     counts[arr[i]] ? (counts[arr[i]] += 1) : (counts[arr[i]] = 1);
+//   console.log(counts);
+// };
 
-scoreCount(gameScore);
+// scoreCount(gameScore);
 
-// Code challenge 3
-const gameEvents = new Map([
-  [17, '⚽ GOAL'],
-  [36, '🔁 Substitution'],
-  [47, '⚽ GOAL'],
-  [61, '🔁 Substitution'],
-  [64, '🔶 Yellow card'],
-  [69, '🔴 Red card'],
-  [70, '🔁 Substitution'],
-  [72, '🔁 Substitution'],
-  [76, '⚽ GOAL'],
-  [80, '⚽ GOAL'],
-  [92, '🔶 Yellow card'],
-]);
+// // Code challenge 3
+// const gameEvents = new Map([
+//   [17, '⚽ GOAL'],
+//   [36, '🔁 Substitution'],
+//   [47, '⚽ GOAL'],
+//   [61, '🔁 Substitution'],
+//   [64, '🔶 Yellow card'],
+//   [69, '🔴 Red card'],
+//   [70, '🔁 Substitution'],
+//   [72, '🔁 Substitution'],
+//   [76, '⚽ GOAL'],
+//   [80, '⚽ GOAL'],
+//   [92, '🔶 Yellow card'],
+// ]);
 
-// No 1
+// // No 1
 
-const eventsArray = [...new Set(gameEvents.values())];
-console.log(eventsArray);
+// const eventsArray = [...new Set(gameEvents.values())];
+// console.log(eventsArray);
 
-// No 2
-gameEvents.delete(64);
-// console.log(gameEvents);
+// // No 2
+// gameEvents.delete(64);
+// // console.log(gameEvents);
 
-// NO 3
-const gameEventsKeys = [...gameEvents.keys()];
-//  in js to use negative index to grab array elements you have to use the at method
-let fullGameTime = gameEventsKeys.at(-1);
-console.log(fullGameTime);
-console.log(`An event happened, on
-average, every ${Math.trunc(fullGameTime / gameEvents.size)} minutes`);
+// // NO 3
+// const gameEventsKeys = [...gameEvents.keys()];
+// //  in js to use negative index to grab array elements you have to use the at method
+// let fullGameTime = gameEventsKeys.at(-1);
+// console.log(fullGameTime);
+// console.log(`An event happened, on
+// average, every ${Math.trunc(fullGameTime / gameEvents.size)} minutes`);
 
-// No 4
-let el;
-// You should use more specific names for your iterators not generic ones
-for (const [key, val] of gameEvents) {
-  key < 45
-    ? (el = `[FIRST HALF] ${key}: ${val}`)
-    : (el = `[SECOND HALF] ${key}: ${val}`);
-  console.log(el);
-}
+// // No 4
+// let el;
+// // You should use more specific names for your iterators not generic ones
+// for (const [key, val] of gameEvents) {
+//   key < 45
+//     ? (el = `[FIRST HALF] ${key}: ${val}`)
+//     : (el = `[SECOND HALF] ${key}: ${val}`);
+//   console.log(el);
+// }
