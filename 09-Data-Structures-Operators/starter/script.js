@@ -522,7 +522,7 @@ console.log('B737'[0]);
 // we can read the length of strings
 console.log(airline.length);
 
-// Sting methods
+// String methods
 
 // indexOf
 console.log(airline.indexOf('r'));
