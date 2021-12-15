@@ -512,7 +512,7 @@ restaurant.orderDelivery({
 // console.log(...question.values());
 
 // WORKING WITH STRINGS
-const airline = 'Ghana Airlines';
+const airline = 'Ghana Airlines Company';
 const plane = 'A320';
 
 // getting the character of a string at a certain position
@@ -530,12 +530,42 @@ console.log(airline.indexOf('r'));
 console.log(airline.lastIndexOf('i'));
 
 // word search
-console.log(airline.indexOf('portugal'));
+console.log(airline.indexOf('Ghana'));
 
 // Extracting parts of a strings using the slice method
 console.log(airline.slice(5));
 console.log(airline.slice(5, 9));
 
-//  extracting first word
-console.log(airline.slice(0, airline.indexOf('')));
-console.log(airline.slice(airline.lastIndexOf('')));
+//  extracting without knowing the index
+// indexOf('') returns the first occurence of white space in the string
+console.log(airline.slice(0, airline.indexOf(' ')));
+// lastIndexOf('') starts extracting from the last white space occurence
+console.log(airline.slice(airline.lastIndexOf(' ')));
+
+// extracting from behind
+console.log(airline.slice(-2));
+
+console.log(airline.slice(0, -1));
+
+//  String manipulation in action
+const checkMiddleSeat = function (seat) {
+  //  B and E are the middle seats
+  const lastLetter = seat.slice(-1);
+
+  if (lastLetter === 'E' || lastLetter === 'B') {
+    console.log(`Ouuch you picked a sandwich seat 😀️ sorry`);
+  } else {
+    console.log(`Oh you picked a superb seat 🙄️`);
+  }
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+checkMiddleSeat('12A');
+checkMiddleSeat('17D');
+
+// How js really calls strings behind the scene
+console.log(new String('joel'));
+console.log(typeof new String('joel'));
+console.log(typeof new String('joel').slice(2));
