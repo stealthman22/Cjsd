@@ -219,3 +219,50 @@ const game = {
 // and convert them to camelCase.
 // The input will come from a textarea inserted into the DOM (see code below to
 // insert the elements), and conversion will happen when the button is pressed.
+
+// const text = document.body.append(document.createElement('textarea'));
+// const btn = document.body.append(document.createElement('button'));
+
+const text = document.createElement('textarea');
+document.body.appendChild(text);
+const btn = document.createElement('button');
+btn.innerHTML = 'Click Me';
+btn.style.fontSize = '1rem';
+document.body.appendChild(btn);
+
+const camelCaseTransform = function () {
+  // this was the only way i found to log out the right values.
+  let content = text.value.split('\n');
+  let updatedContent = [];
+  let finalArray = [];
+  let finalContent = '';
+
+  for (let word of content) {
+    if (word.includes('_')) {
+      word = word.toLowerCase().split('_');
+      updatedContent.push(word);
+    } else {
+      console.log('Input cannot be camelCased!');
+    }
+  }
+
+  for (let word of updatedContent) {
+    word[1] = word[1].charAt(0).toUpperCase() + word[1].slice(1);
+    word = word.join();
+    finalArray.push(word.replace(',', ''));
+  }
+
+  finalContent = finalArray.join('\n');
+  console.log(finalContent);
+};
+
+btn.addEventListener('click', camelCaseTransform);
+
+// solving process
+// when the button is clicked, contents of the text area should be taken and transformed into camel case
+// let's break it down and do this on just one string, with no format check
+// target the content of the text area, and grab it, and then replace the _ with the first word of the second part of the string capitalized and the rest follow
+// grab the content of text area
+
+// remove the underscore
+// change the first letter after the underscore to caps
