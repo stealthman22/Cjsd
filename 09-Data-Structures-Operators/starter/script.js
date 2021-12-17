@@ -569,3 +569,161 @@ checkMiddleSeat('17D');
 console.log(new String('joel'));
 console.log(typeof new String('joel'));
 console.log(typeof new String('joel').slice(2));
+
+// Changing a strings case
+console.log(airline.toUpperCase());
+console.log('PROFESSOR LOVES TOKYO LIKE A DAUGHTER'.toLowerCase());
+
+//  Fix caps in name
+
+let passenger = 'bOlGOta';
+//  To fix, first convert all to lower case
+const passengerLowerCase = passenger.toLocaleLowerCase();
+// Grab first letter and change to uppercase
+const firstLetterPassenger =
+  passenger[0].toLocaleUpperCase() + passengerLowerCase.slice(1);
+passenger = firstLetterPassenger;
+console.log(passenger);
+
+// How about we make this a nice nifty function
+const convertToLowerCase = function (str) {
+  const strLower = str.toLocaleLowerCase();
+  const strCorrect = str[0].toUpperCase() + strLower.slice(1);
+  str = strCorrect;
+
+  console.log(str);
+};
+
+convertToLowerCase('bERliN');
+
+// Comparing passenger email
+const email = 'hello@jojo.com';
+const loginEmail = '    HeLlO@jojo.com \n';
+
+// correct the login email
+const loginCorrect = loginEmail.toLowerCase();
+const trimmedEmail = loginCorrect.trim();
+console.log(trimmedEmail);
+
+//  in one step
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+
+// And lets make this a function again
+const compareEmails = function (email1, email2) {
+  const refactoredEmail = email2.toLowerCase().trim();
+  email2 = refactoredEmail;
+  if (email1 === email2) {
+    console.log(`Allow login, email normalized and is same as  ${email1}`);
+  } else {
+    console.log(`Emails do not match, reject login ${email2}`);
+  }
+};
+
+const email1 = 'alarajoel@gmail.com';
+const email2 = 'AlaRajoel@gMAIL.com ';
+compareEmails(email1, email2);
+
+// replacing
+const priceGB = '288,97€';
+// what you want replaced comes first and what you would be replacing with is next
+const priceUS = priceGB.replace('€', '$').replace(',', '.');
+console.log(priceUS);
+
+//  replacing full words
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23';
+// replace all  is still very new and may have compatibility issues
+// const newAnnouncement = announcement.replaceAll('door', 'gate');
+
+// using regular expressions
+// g means all global or all occurences
+const newAnnouncement = announcement.replace(/door/g, 'gate');
+console.log(newAnnouncement);
+
+// check if a string includes a substring; returns boolean
+const airplane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+
+//  check what a string starts with; returns boolean
+console.log(plane.startsWith('Air'));
+
+// endswith also exists
+if (airplane.startsWith('Airbus') && airplane.endsWith('neo')) {
+  console.log('Thsi plane is part of the new Airbus family');
+}
+
+// check if a passenger luggage is allowed to be checked in
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log(`You are NOT allowed on board`);
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('I have some socks and a camera');
+checkBaggage('I have some snacks and a gun for protection');
+
+// console.log('a+very+good+boy'.split('+').toString().replaceAll(',', ' '));
+
+// split
+console.log('Alara Joel'.split(' '));
+const [firstName, lastName] = 'Alara Joel'.split(' ');
+
+// console.log(firstName, lastName);
+//  join returns a string from the array
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+// capitalize name function
+
+const capitalizeName = function (name) {
+  // first split the name, which returns an array
+  const names = name.split(' ');
+  const namesUpper = [];
+  // loop over the array
+  for (const n of names) {
+    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    //  second method
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  name = namesUpper.join(' ');
+  console.log(name);
+};
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('jonas uncoo');
+
+// padding a string
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').padEnd(30, '+'));
+console.log('Jonas'.padStart(23, '+').padEnd(30, '+'));
+
+// using padding to hide secret numbers e.g credit card
+
+const maskCreditCard = function (number) {
+  // take out last four numbers, and then use padStart to recreate it with some symbol
+  const str = number + '';
+  const last = str.slice(-4);
+  // ensure the original length of the string is returned
+  const mask = last.padStart(str.length, '*');
+  return mask;
+};
+console.log(maskCreditCard(4524444436698745512236587455n));
+console.log(maskCreditCard('44788569'));
+console.log(maskCreditCard(7474747474));
+
+// The repeat method
+const message2 = 'Bad Weather... All Departures Delayed....  ';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  const messageAlert = `There are ${n} planes in line ${'✈️ '.repeat(n)}`;
+  return messageAlert;
+};
+
+console.log(planesInLine(8));
+console.log(planesInLine(5));
