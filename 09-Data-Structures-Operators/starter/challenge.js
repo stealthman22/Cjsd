@@ -223,6 +223,12 @@ const game = {
 // const text = document.body.append(document.createElement('textarea'));
 // const btn = document.body.append(document.createElement('button'));
 
+// underscore_case
+// first_name
+// Some_Variable
+// calculate_AGE
+// delayed_departure
+
 const text = document.createElement('textarea');
 document.body.appendChild(text);
 const btn = document.createElement('button');
@@ -230,33 +236,55 @@ btn.innerHTML = 'Click Me';
 btn.style.fontSize = '1rem';
 document.body.appendChild(btn);
 
+// const camelCaseTransform = function () {
+//   // this was the only way i found to log out the right values.
+//   let content = text.value.split('\n');
+//   let updatedContent = [];
+//   let finalArray = [];
+//   let finalContent = '';
+
+//   for (let word of content) {
+//     if (word.includes('_')) {
+//       word = word.toLowerCase().split('_');
+//       updatedContent.push(word);
+//     } else {
+//       console.log('Input cannot be camelCased!');
+//     }
+//   }
+
+//   for (let [index, word] of updatedContent.entries()) {
+//     word[1] = word[1].charAt(0).toUpperCase() + word[1].slice(1);
+//     word = word + '✅️'.repeat(index + 1);
+//     // seems the join was redundant here
+//     // word = word.join();
+//     finalArray.push(word.replace(',', ''));
+//   }
+
+//   finalContent = finalArray.join('\n');
+//   console.log(finalContent);
+// };
+
+// Jonas way better solution
 const camelCaseTransform = function () {
-  // this was the only way i found to log out the right values.
-  let content = text.value.split('\n');
-  let updatedContent = [];
-  let finalArray = [];
-  let finalContent = '';
+  // Get value of textarea
+  const text = document.querySelector('textarea').value;
+  // Separate words based on newline character
+  // This returns an array containing all the words
+  const rows = text.split('\n');
+  console.log(rows);
+  // loop over the words
+  for (const [i, row] of rows.entries()) {
+    // This splits the words apart and destructuring houses them in their own variables
+    const [first, second] = row.toLowerCase().trim().split('_');
 
-  for (let word of content) {
-    if (word.includes('_')) {
-      word = word.toLowerCase().split('_');
-      updatedContent.push(word);
-    } else {
-      console.log('Input cannot be camelCased!');
-    }
+    // transform to uppercase
+    const output = `${first}${sedond.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
   }
-
-  for (let word of updatedContent) {
-    word[1] = word[1].charAt(0).toUpperCase() + word[1].slice(1);
-    word = word.join();
-    finalArray.push(word.replace(',', ''));
-  }
-
-  finalContent = finalArray.join('\n');
-  console.log(finalContent);
 };
-
-btn.addEventListener('click', camelCaseTransform);
+// btn.addEventListener('click', camelCaseTransform);
 
 // solving process
 // when the button is clicked, contents of the text area should be taken and transformed into camel case
