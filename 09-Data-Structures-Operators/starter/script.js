@@ -609,7 +609,7 @@ console.log(trimmedEmail);
 const normalizedEmail = loginEmail.toLowerCase().trim();
 console.log(normalizedEmail);
 
-// And lets make this a function again
+// And lets make this a function  to correct login emails
 const compareEmails = function (email1, email2) {
   const refactoredEmail = email2.toLowerCase().trim();
   email2 = refactoredEmail;

@@ -294,3 +294,18 @@ const camelCaseTransform = function () {
 
 // remove the underscore
 // change the first letter after the underscore to caps
+
+// const formatFlights = flights.split('+');
+// console.log(formatFlights);
+
+const getCode = str => str.slice(0, 3).toUpperCase();
+
+for (let flight of flights.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+
+  const output = ` ${type.startsWith('_Delayed') ? '💔️' : ''}${type.replaceAll(
+    '_',
+    ' '
+  )} ${getCode(from)} ${getCode(to)} (${time.replace(':', 'h')})`.padStart(37);
+  console.log(output);
+}
