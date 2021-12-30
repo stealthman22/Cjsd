@@ -278,7 +278,7 @@ const camelCaseTransform = function () {
     const [first, second] = row.toLowerCase().trim().split('_');
 
     // transform to uppercase
-    const output = `${first}${sedond.replace(
+    const output = `${first}${second.replace(
       second[0],
       second[0].toUpperCase()
     )}`;
