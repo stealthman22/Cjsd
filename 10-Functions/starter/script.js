@@ -95,3 +95,45 @@ document.body.addEventListener('click', high5);
 
 // for each can accepts a higher order function too
 ['Jonas', 'Martha', 'Adam'].forEach(high5);
+
+const canDrive = function (person) {
+  if (person.age > 18 && person.age < 80) {
+    console.log('You are of drivable age and qualify for a license test');
+  } else if (person.age < 18) {
+    console.log(
+      'Sorry please you do not qualify for a license, you are too young'
+    );
+  } else {
+    ('Sorry please you do not qualify for a license, you are above retirement age, but can apply for a driver instead');
+  }
+};
+
+const checkCitizen = function (ctz) {
+  const normalize = ctz.toLowerCase();
+  if (normalize !== 'usa') {
+    console.log(
+      'Please you are not a citizen, pick the resident permit form first!'
+    );
+  }
+};
+
+const john = {
+  age: 25,
+  country: 'USA',
+};
+canDrive(john, checkCitizen);
+
+// Functions returning functions
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+//  rewrite that weird function as an arrow function
+const greet = greeting => name => console.log(`${greeting} ${name}`);
+// confusing
+const greeterHey = greet('Hey');
+greeterHey('steven');
+
+greet('Hello')('Jonas');
