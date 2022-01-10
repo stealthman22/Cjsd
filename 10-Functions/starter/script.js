@@ -96,32 +96,33 @@ document.body.addEventListener('click', high5);
 // for each can accepts a higher order function too
 ['Jonas', 'Martha', 'Adam'].forEach(high5);
 
-const canDrive = function (person) {
-  if (person.age > 18 && person.age < 80) {
-    console.log('You are of drivable age and qualify for a license test');
-  } else if (person.age < 18) {
-    console.log(
-      'Sorry please you do not qualify for a license, you are too young'
-    );
-  } else {
-    ('Sorry please you do not qualify for a license, you are above retirement age, but can apply for a driver instead');
-  }
-};
+//  trying to write my own HOF
+// const canDrive = function (person) {
+//   if (person.age > 18 && person.age < 80) {
+//     console.log('You are of drivable age and qualify for a license test');
+//   } else if (person.age < 18) {
+//     console.log(
+//       'Sorry please you do not qualify for a license, you are too young'
+//     );
+//   } else {
+//     ('Sorry please you do not qualify for a license, you are above retirement age, but can apply for a driver instead');
+//   }
+// };
 
-const checkCitizen = function (ctz) {
-  const normalize = ctz.toLowerCase();
-  if (normalize !== 'usa') {
-    console.log(
-      'Please you are not a citizen, pick the resident permit form first!'
-    );
-  }
-};
+// const checkCitizen = function (ctz) {
+//   const normalize = ctz.toLowerCase();
+//   if (normalize !== 'usa') {
+//     console.log(
+//       'Please you are not a citizen, pick the resident permit form first!'
+//     );
+//   }
+// };
 
-const john = {
-  age: 25,
-  country: 'USA',
-};
-canDrive(john, checkCitizen);
+// const john = {
+//   age: 25,
+//   country: 'USA',
+// };
+// canDrive(john, checkCitizen);
 
 // Functions returning functions
 // const greet = function (greeting) {
@@ -137,3 +138,39 @@ const greeterHey = greet('Hey');
 greeterHey('steven');
 
 greet('Hello')('Jonas');
+
+// The call and apply methods
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight  ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: ` ${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(222, 'Joel Alara');
+lufthansa.book(266, 'Oyin Bhadmus');
+console.log(lufthansa);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+// does not work
+// book(23, 'Sarah Willyboy');
+
+// call the book function, with its this keyword pointing to eurowings
+book.call(eurowings, 234, 'SarahWIlly');
+console.log(eurowings.bookings);
+
+book.call(lufthansa, 289, 'Jon Snow');
+console.log(lufthansa.bookings);
