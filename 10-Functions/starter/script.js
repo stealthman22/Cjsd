@@ -87,14 +87,14 @@ transformer('Javascript is the best', oneWord);
 //  all event handlers are essentially higher order functions
 // js uses callbacks all the time
 
-const high5 = function () {
-  console.log(':wave:');
-};
+// const high5 = function () {
+//   console.log(':wave:');
+// };
 
-document.body.addEventListener('click', high5);
+// document.body.addEventListener('click', high5);
 
-// for each can accepts a higher order function too
-['Jonas', 'Martha', 'Adam'].forEach(high5);
+// // for each can accepts a higher order function too
+// ['Jonas', 'Martha', 'Adam'].forEach(high5);
 
 //  trying to write my own HOF
 // const canDrive = function (person) {
@@ -174,3 +174,61 @@ console.log(eurowings.bookings);
 
 book.call(lufthansa, 289, 'Jon Snow');
 console.log(lufthansa.bookings);
+
+const swiss = {
+  airline: 'Swiss Airlines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 345, 'Stealthman 22');
+console.log(swiss.bookings);
+
+// apply method does the same thing, except it receives an array
+const flightData = [587, 'George Armani'];
+book.apply(swiss, flightData);
+
+// call doing it the apply way, using a spread operator
+book.call(lufthansa, ...flightData);
+
+// The  bind method (returns a new function)
+const bookEW = book.bind(eurowings);
+const bookLX = book.bind(swiss);
+const bookLH = book.bind(lufthansa);
+bookEW(234, 'Steven Crossman');
+bookLX(188, 'Ama Serwaa');
+
+// bind method with set params (Partial application)
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Alara TObi');
+
+// bind method  with event listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+
+// lufthansa.buyPlane();
+
+const buyButton = document.querySelector('.buy');
+buyButton.addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// DAY 88 (10th January 2022)
+// Call And Apply method
+// • We can explicitly tell a function what it's this keyword should be like, i.e where should the this of a function point to, using the call function method.
+// • the first argument of the call method, sets where the value of this should come from
+// • this is a variable that is used in instance methods to refer to the object on which they are working.
+// • The apply method does virtually the same thing as the Call method, only that it does not receive a list of arguments after this keyword, instead, it receives an array
+// • The apply method is not used anymore, because we can use the call method, and the spread operator to read the data from the array
+// book.call(obj, ...arr)
+
+// The Bind Method
+// • Does the same as call and apply, but bind does not immediately call the function, instead it returns a new function where this keyword is bound to whatever value we pass to bind.
+// • We can even preset methods to the bind method, and they will be defined for all function calls (this can be likened to a coding pattern called the partial application pattern)
+// • Partial application means that a part of the arguments for the original function is already applied.
+
+// Bind with event handlers
+// • In an event handler function, the this keyword points to the element on which the hadnler is attached to
