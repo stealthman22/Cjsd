@@ -216,19 +216,23 @@ lufthansa.buyPlane = function () {
 const buyButton = document.querySelector('.buy');
 buyButton.addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
 
-// DAY 88 (10th January 2022)
-// Call And Apply method
-// • We can explicitly tell a function what it's this keyword should be like, i.e where should the this of a function point to, using the call function method.
-// • the first argument of the call method, sets where the value of this should come from
-// • this is a variable that is used in instance methods to refer to the object on which they are working.
-// • The apply method does virtually the same thing as the Call method, only that it does not receive a list of arguments after this keyword, instead, it receives an array
-// • The apply method is not used anymore, because we can use the call method, and the spread operator to read the data from the array
-// book.call(obj, ...arr)
+// Partial application with the bind method
 
-// The Bind Method
-// • Does the same as call and apply, but bind does not immediately call the function, instead it returns a new function where this keyword is bound to whatever value we pass to bind.
-// • We can even preset methods to the bind method, and they will be defined for all function calls (this can be likened to a coding pattern called the partial application pattern)
-// • Partial application means that a part of the arguments for the original function is already applied.
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
 
-// Bind with event handlers
-// • In an event handler function, the this keyword points to the element on which the hadnler is attached to
+// now lets take care of a special tax case, one that we always know the rate
+const addVAT = addTax.bind(null, 0.23);
+
+// same as
+// addTax = value => value + value * 0.23;
+console.log(addVAT(100));
+
+// challenge: use the function returning functions pattern to mimic addTax function
+const calcVAT =
+  (rate = 0.23) =>
+  value =>
+    value + value * rate;
+
+const finalCalcVAT = calcVAT();
+console.log(finalCalcVAT(100));
