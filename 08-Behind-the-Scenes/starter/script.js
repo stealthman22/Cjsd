@@ -17,15 +17,15 @@
 // const x = first(x);
 
 /* 
-How the call stack executes thsi codd 
+How the call stack executes this code
 1. Global context is created, name is declared and its value is stored, first is declared but its value isn't read yet, it's a function, same with second ; it kinda holds them
 
 2.  Attempts to read the value of X.... oops function call.
 3. now it goes back to first... and creates an execution context for it, so its code can be run
-4. let a is declared and its calue is stored in the variable environment of first's execution context.
+4. let a is declared and its value is stored in the variable environment of first's execution context.
 5. tries to read and store const b too. ooops function call. call stack pauses first
 6. moves to second and creates it's own execution context.
-7. sores var c, hits return and goes out of this context, and pops it off the stack
+7. stores var c, hits return and goes out of this context, and pops it off the stack
 8. resumes executing first, and reads and stores the value of b
 9. hits return and goes out of first, oooh remember x was paused lol
 `10. NOw it is resumed and it's value is read and stored.
@@ -33,36 +33,36 @@ How the call stack executes thsi codd
 */
 
 // EXECUTION CONTEXT
-// function calcAge(birthYear) {
-//   const age = 2030 - birthYear;
-//   // console.log(Name);
+function calcAge(birthYear) {
+  const age = 2030 - birthYear;
+  // console.log(Name);
 
-//   function printAge() {
-//     let output = `${firstName} You are ${age}, born in ${birthYear}`;
-//     console.log(output);
+  function printAge() {
+    let output = `${firstName} You are ${age}, born in ${birthYear}`;
+    console.log(output);
 
-//     if (birthYear >= 1981 && birthYear <= 1996) {
-//       // Creating NEW variable with same name as outer scope
-//       const firstName = 'Steven';
-//       const str = `Oh, and you're a millenial, ${firstName}`;
+    if (birthYear >= 1981 && birthYear <= 1996) {
+      // Creating NEW variable with same name as outer scope
+      const firstName = 'Steven';
+      const str = `Oh, and you're a millenial, ${firstName}`;
 
-//       // const str = `Oh, and you're a millenial, ${firstName}`;
-//       console.log(str);
+      // const str = `Oh, and you're a millenial, ${firstName}`;
+      console.log(str);
 
-//       function add(a, b) {
-//         // console.log(output, 'here');
-//         return a + b;
-//       }
-//       // Reassigning outer scope's variable!
-//       output = 'New Output';
-//     }
+      function add(a, b) {
+        // console.log(output, 'here');
+        return a + b;
+      }
+      // Reassigning outer scope's variable!
+      output = 'New Output';
+    }
 
-//     console.log(output, 'here');
-//   }
-//   printAge();
-//   return age;
-//   // console.log(add);
-// }
+    console.log(output, 'here');
+  }
+  printAge();
+  return age;
+  // console.log(add);
+}
 
 // const firstName = 'Jonas';
 // calcAge(1991);
@@ -268,3 +268,7 @@ jessicaCopy.family.push('Mary');
 jessicaCopy.family.push('Hene');
 console.log('Before Marriage', jessica2);
 console.log('After Marriage', jessicaCopy);
+
+// programming paradigms
+// procedural, object-oriented and functional
+// imperative and declarative

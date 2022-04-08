@@ -1,6 +1,6 @@
-// Challenge 1
+// // Challenge 1
 
-// No 1
+// // No 1
 // const calcAverage = (a, b, c) => Math.round((a + b + c) / 3);
 
 // let dolphins = calcAverage(44, 23, 71);
@@ -33,13 +33,13 @@
 
 // checkWinner(dolphins, koalas);
 
-// No 2
+// // No 2
 // const avg = console.log(
 // 	`Team Dolphins' average score is ${dolphins} 🌊️, and team Koalas' is ${koalas} 🐨️. `
 // );
 
-// No 3 and 4
-// First solution, worked but not the best practice... well maybe
+// // No 3 and 4
+// // First solution, worked but not the best practice... well maybe
 // function checkWinner (avgDolphins, avgKoalas) {
 // 	// const dolphins = calcAverage(44, 23, 71);
 
@@ -62,7 +62,7 @@
 
 // checkWinner();
 
-// Challenge 2
+// // Challenge 2
 
 // function calcTip (bill) {
 // 	if (bill >= 50 && bill <= 300) {
@@ -129,41 +129,41 @@
 // 	`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})`}
 // `);
 
-// Challenge 4
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+// // Challenge 4
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 
-const tips = [];
-const totals = [];
+// const tips = [];
+// const totals = [];
 
-const calcTip = bill => (bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2);
+// const calcTip = bill => (bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2);
 
-for (let i = 0; i < bills.length; i++) {
-  // populating the tips array
-  tips.push(calcTip(bills[i]));
-  // populating the totals array
-  totals.push(tips[i] + bills[i]);
-}
-console.log('The bills', bills, 'The tips', tips, 'The totals', totals);
-// console.log(`The bills ${bills},
-// The tips ${tips},
-// The totals ${totals}`);
+// for (let i = 0; i < bills.length; i++) {
+//   // populating the tips array
+//   tips.push(calcTip(bills[i]));
+//   // populating the totals array
+//   totals.push(tips[i] + bills[i]);
+// }
+// console.log('The bills', bills, 'The tips', tips, 'The totals', totals);
+// // console.log(`The bills ${bills},
+// // The tips ${tips},
+// // The totals ${totals}`);
 
-// Bonus
+// // Bonus
 
-function calcAverage(arr) {
-  let sum = 0;
+// function calcAverage(arr) {
+//   let sum = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    const totalValue = sum + arr[i];
-    sum = totalValue;
-  }
-  console.log(`The total sum is ${sum}`);
-  const average = sum / arr.length;
-  console.log(`The average is ${average}`);
-  return;
-}
+//   for (let i = 0; i < arr.length; i++) {
+//     const totalValue = sum + arr[i];
+//     sum = totalValue;
+//   }
+//   console.log(`The total sum is ${sum}`);
+//   const average = sum / arr.length;
+//   console.log(`The average is ${average}`);
+//   return;
+// }
 
-calcAverage(totals);
+// calcAverage(totals);
 //  now this was dope lol
 // just realized  a parameter can actually hold an array, without doing any crazy setups.
 

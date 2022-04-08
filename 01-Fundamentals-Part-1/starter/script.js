@@ -92,8 +92,8 @@ x--; // x = x - 1
 // console.log(ageJoel, ageTobi, averageAge)
 
 // Template Literals
-const firstName = "Alara";
-const job = "web developer";
+const firstName = 'Alara';
+const job = 'web developer';
 const birthYear = 1993;
 
 // Type coercion
@@ -147,7 +147,7 @@ const birthYear = 1993;
 // console.log(inputYear + 18);
 
 // converted to avoid coercion
-const inputYear = "1991";
+const inputYear = '1991';
 // console.log(Number(inputYear )+ 18 , inputYear);
 
 // // Nan weirdo
@@ -238,8 +238,8 @@ const inputYear = "1991";
 
 // Boolean Logic
 
-const hasDriversLicense = true; // A
-const hasGoodVision = true; // B
+// const hasDriversLicense = true; // A
+// const hasGoodVision = true; // B
 
 // and
 // console.log(hasDriversLicense && hasGoodVision);
@@ -258,38 +258,38 @@ const hasGoodVision = true; // B
 // }
 
 const isTired = false; // C
-// console.log(hasDriversLicense || hasGoodVision || isTired)
+console.log(hasDriversLicense || hasGoodVision || isTired);
 
-// if(hasDriversLicense && hasGoodVision && !isTired) {
-//  console.log('Ama is safe to drive')
-// } else {
-//  console.log('Someone else should drive her')
-// }
+if (hasDriversLicense && hasGoodVision && !isTired) {
+  console.log('Ama is safe to drive');
+} else {
+  console.log('Someone else should drive her');
+}
 
 // THE SWITCH STATEMENT
-const day = "friday";
+const day = 'friday';
 
-// switch (day) {
-// 	case "monday":
-// 		console.log("Plan for the week");
-// 		console.log("Check on mum");
-// 		break;
-// 	case "tuesday":
-// 		console.log("Conduct ideation sessions");
-// 	case "wednesday":
-// 	case "thursday":
-// 		console.log("Work on Projects");
-// 		break;
-// 	case "friday":
-// 		console.log("Play basketball");
-// 		break;
-// 	case "saturday":
-// 	case "sunday":
-// 		console.log("Enjoy the weekend");
-// 		break;
-// 	default:
-// 		console.log("Not a valid day!");
-// }
+switch (day) {
+  case 'monday':
+    console.log('Plan for the week');
+    console.log('Check on mum');
+    break;
+  case 'tuesday':
+    console.log('Conduct ideation sessions');
+  case 'wednesday':
+  case 'thursday':
+    console.log('Work on Projects');
+    break;
+  case 'friday':
+    console.log('Play basketball');
+    break;
+  case 'saturday':
+  case 'sunday':
+    console.log('Enjoy the weekend');
+    break;
+  default:
+    console.log('Not a valid day!');
+}
 
 // if (day === "monday") {
 // 	console.log("Plan for the week");
@@ -315,8 +315,9 @@ const day = "friday";
 
 const age = 12;
 
-// age >= 18 ? console.log("I am legal to drink wine 🍷️") :
-// console.log("I think I will just stick with water till I am older");
+age >= 18
+  ? console.log('I am legal to drink wine 🍷️')
+  : console.log('I think I will just stick with water till I am older');
 
 // great use-case for ternary
 // const drink =
@@ -325,19 +326,14 @@ const age = 12;
 // 		"water 🌊️";
 // console.log(drink);
 
-console.log(
-	`I like to drink ${
-		age >= 18 ? "wine 🍷️" :
-		"water 🌊️"}`
-);
+console.log(`I like to drink ${age >= 18 ? 'wine 🍷️' : 'water 🌊️'}`);
 
 // for if the value has to be stored outside the statement.
 let drink2;
 
 if (age >= 18) {
-	drink2 = "wine";
-}
-else {
-	drink2 = "water";
+  drink2 = 'wine';
+} else {
+  drink2 = 'water';
 }
 console.log(drink2);
