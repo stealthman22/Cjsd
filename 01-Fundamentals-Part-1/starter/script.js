@@ -68,28 +68,28 @@ x *= 4; //x = x * 4
 x++; // x= x+1;
 x--; // x = x - 1
 
-// console.log(x);
+console.log(x);
 
-// console.log(ageJoel < ageTobi);
-// console.log(ageTobi >= 18);
+console.log(ageJoel < ageTobi);
+console.log(ageTobi >= 18);
 
 //  comparison operators
-// console.log(ageJoel < ageTobi);
+console.log(ageJoel < ageTobi);
 
-// console.log(ageTobi >= 18);
+console.log(ageTobi >= 18);
 
-// const isFullAge = ageTobi >= 18;
+const isFullAge = ageTobi >= 18;
 
-// Precedence
-// console.log(now - 1993 > now - 2001);
+Precedence;
+console.log(now - 1993 > now - 2001);
 
-// let a, b;
-// a = b = 25-10-5;
-// console.log(a,b);
+let a, b;
+a = b = 25 - 10 - 5;
+console.log(a, b);
 
-// const averageAge = (ageJoel + ageTobi) / 2;
+const averageAge = (ageJoel + ageTobi) / 2;
 
-// console.log(ageJoel, ageTobi, averageAge)
+console.log(ageJoel, ageTobi, averageAge);
 
 // Template Literals
 const firstName = 'Alara';
