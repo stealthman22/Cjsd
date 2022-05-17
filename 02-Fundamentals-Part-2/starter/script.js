@@ -112,22 +112,18 @@ function cutFruitPieces(fruit) {
 
 // ARRAYS
 
-// const friends = [
-// 	"Micheal",
-// 	"Steven",
-// 	"Peter",
-// ];
+const friends = ['Micheal', 'Steven', 'Peter'];
 
-// const years1 = new Array(1990, 2000, 2021);
+const years1 = new Array(1990, 2000, 2021);
 
-// console.log(friends[0]);
-// console.log(friends.length);
-// // get last element in the array
-// console.log(friends[friends.length - 1]);
+console.log(friends[0]);
+console.log(friends.length);
+// get last element in the array
+console.log(friends[friends.length - 1]);
 
-// //  mutating the array
-// friends[2] = 'Jogun';
-// console.log(friends);
+//  mutating the array
+friends[2] = 'Jogun';
+console.log(friends);
 
 //  different types
 
@@ -191,22 +187,22 @@ const nameKey = 'Name';
 // this won't work with the dot notation. Throws error unexpected string
 console.log(joel['first' + nameKey]);
 
-// const interestedIN = prompt(
-//   'What do you want to know about Joel? Choose between firstName, lastName, age, job, and friends'
-// );
+const interestedIN = prompt(
+  'What do you want to know about Joel? Choose between firstName, lastName, age, job, and friends'
+);
 
 // importance of bracket notation
-// if (joel[interestedIN]) {
-//   console.log(joel[interestedIN]);
-// } else {
-//   console.log(
-//     'Wrong request! Choose between firstnName, lastName, age, job, and friends'
-//   );
-// }
+if (joel[interestedIN]) {
+  console.log(joel[interestedIN]);
+} else {
+  console.log(
+    'Wrong request! Choose between firstnName, lastName, age, job, and friends'
+  );
+}
 
-// joel.location = "Accra";
-// joel["twitter"] = "alara-joel";
-// console.log(joel);
+joel.location = 'Accra';
+joel['twitter'] = 'alara-joel';
+console.log(joel);
 
 // // challenge
 // // Joel has 5 friends and his best friend is called Jesus.
@@ -229,11 +225,11 @@ console.log(joel['first' + nameKey]);
 // 		"Salim",
 // 		"Wakeup",
 // 		"Corni",
-// 	],
-// 	hasDriversLicense : true,
-// 	// calcAge   : function (birthYear) {
-// 	// 	return 2021 - birthYear;
-// 	// },
+// ],
+// hasDriversLicense : true,
+// calcAge   : function (birthYear) {
+// 	return 2021 - birthYear;
+// },
 
 // // 	// using this
 // 	calcAge : function () {
@@ -317,11 +313,11 @@ console.log(types);
 
 //  continue and break statements
 // Continue
-// console.log('---ONLY STRINGS---');
-// for (let i = 0; i < friends.length; i++) {
-//   if (typeof friends[i] !== 'string') continue;
-//   console.log(friends[i], typeof friends[i]);
-// }
+console.log('---ONLY STRINGS---');
+for (let i = 0; i < friends.length; i++) {
+  if (typeof friends[i] !== 'string') continue;
+  console.log(friends[i], typeof friends[i]);
+}
 
 // Break
 console.log('-----Break with Number-----');
@@ -331,18 +327,18 @@ for (let i = 0; i < friends.length; i++) {
 }
 
 // LOOPING  BACKWARDS AND NESTED LOOPS
-// for (let i = friends.length - 1; i >= 0; i--) {
-//   console.log(i, friends[i]);
-// }
+for (let i = friends.length - 1; i >= 0; i--) {
+  console.log(i, friends[i]);
+}
 
 // // nested loop
-// for (let exercise = 1; exercise < 4; exercise++) {
-//   console.log(`starting exercise ${exercise}`);
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`starting exercise ${exercise}`);
 
-//   for (let rep = 1; rep < 6; rep++) {
-//     console.log(`Exercise ${exercise}: lifing weight repetition ${rep} `);
-//   }
-// }
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise}: lifing weight repetition ${rep} `);
+  }
+}
 
 // THE WHILE LOOP
 
@@ -350,11 +346,11 @@ for (let rep = 1; rep <= 10; rep++) {
   console.log(`Lifting weights repetition  ${rep}  🏋‍♀️️`);
 }
 
-// let rep = 1;
-// while (rep <= 10) {
-// 	console.log(`From while loop: Lifting weights repetition ${rep} 🏋‍♀️️`);
-// 	rep++;
-// }
+let rep = 1;
+while (rep <= 10) {
+  console.log(`From while loop: Lifting weights repetition ${rep} 🏋‍♀️️`);
+  rep++;
+}
 
 let dice = Math.trunc(Math.random() * 6) + 1;
 
@@ -362,5 +358,5 @@ while (dice !== 6) {
   console.log(`You rolled a ${dice}`);
   dice = Math.trunc(Math.random() * 6) + 1;
 
-  if (dice === 6) console.log('Loop is about to end');
+  if (dice === 6) console.log('Loop is about to end cos you rolled 6');
 }
