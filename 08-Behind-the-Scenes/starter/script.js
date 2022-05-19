@@ -32,6 +32,7 @@ How the call stack executes this code
 11. PROGRAM DONE!`
 */
 
+// a bit difficult to understand
 // EXECUTION CONTEXT
 function calcAge(birthYear) {
   const age = 2030 - birthYear;

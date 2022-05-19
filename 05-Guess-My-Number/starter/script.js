@@ -76,3 +76,9 @@ document.querySelector('.again').addEventListener('click', function () {
   displayMessage('Start guessing...');
   console.log('again');
 });
+
+let listElements = document.querySelectorAll('.mylist');
+
+console.log(listElements);
+let lastListElement = listElements[listElements.length - 1];
+console.log(lastListElement);
