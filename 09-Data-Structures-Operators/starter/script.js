@@ -598,6 +598,7 @@ convertToLowerCase('bERliN');
 
 // Comparing passenger email
 const email = 'hello@jojo.com';
+// \n means newline
 const loginEmail = '    HeLlO@jojo.com \n';
 
 // correct the login email
