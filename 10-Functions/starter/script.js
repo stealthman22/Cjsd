@@ -218,15 +218,15 @@ buyButton.addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
 
 // Partial application with the bind method
 
-// const addTax = (rate, value) => value + value * rate;
-// console.log(addTax(0.1, 200));
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
 
 // // now lets take care of a special tax case, one that we always know the rate
-// const addVAT = addTax.bind(null, 0.23);
+const addVAT = addTax.bind(null, 0.23);
 
 // // same as
-// // addTax = value => value + value * 0.23;
-// console.log(addVAT(100));
+// addTax = value => value + value * 0.23;
+console.log(addVAT(100));
 
 // // challenge: use the function returning functions pattern to mimic addTax function
 // const calcVAT =
@@ -234,5 +234,15 @@ buyButton.addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
 //   value =>
 //     value + value * rate;
 
+const calcVAT = function (rate = 0.23) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+
 // const finalCalcVAT = calcVAT();
-// console.log(finalCalcVAT(100));
+
+// console.log(calcVAT(100));
+
+const finalCalcVAT = calcVAT();
+console.log(finalCalcVAT(100));
