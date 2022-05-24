@@ -21,19 +21,10 @@ const poll = {
     ) {
       alert('Follow instructions');
     } else {
-      if (favouriteLanguage === 0) {
-        this.answers[0]++;
-      }
-      if (favouriteLanguage === 1) {
-        this.answers[1]++;
-      }
-      if (favouriteLanguage === 2) {
-        this.answers[2]++;
-      }
-      if (favouriteLanguage === 3) {
-        this.answers[3]++;
-      }
+      for (let index = 0; index < this.answers.length; index++) {}
     }
+
+    console.log(this.answers);
   },
 };
 
@@ -66,3 +57,26 @@ poll.registerNewAnswer();
 // } else {
 //   alert(`Thats wrong dude!`);
 // }
+
+// if (favouriteLanguage === 0) {
+//   this.answers[0] += 1;
+// }
+// if (favouriteLanguage === 1) {
+//   this.answers[1] += 1;
+// }
+// if (favouriteLanguage === 2) {
+//   this.answers[2] += 1;
+// }
+// if (favouriteLanguage === 3) {
+//   this.answers[3] += 1;
+// }
+
+// My super chained ternary operator :)
+// first =
+// favouriteLanguage === 0
+//   ? (this.answers[0] += 1)
+//   : favouriteLanguage === 1
+//   ? (this.answers[1] += 1)
+//   : favouriteLanguage === 2
+//   ? (this.answers[2] += 1)
+//   : (this.answers[3] += 1);
