@@ -21,7 +21,18 @@ const poll = {
     ) {
       alert('Follow instructions');
     } else {
-      console.log(favouriteLanguage);
+      if (favouriteLanguage === 0) {
+        this.answers[0]++;
+      }
+      if (favouriteLanguage === 1) {
+        this.answers[1]++;
+      }
+      if (favouriteLanguage === 2) {
+        this.answers[2]++;
+      }
+      if (favouriteLanguage === 3) {
+        this.answers[3]++;
+      }
     }
   },
 };
