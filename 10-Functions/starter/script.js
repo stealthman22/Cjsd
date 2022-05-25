@@ -108,14 +108,18 @@
 //   }
 // };
 
-// const checkCitizen = function (ctz) {
-//   const normalize = ctz.toLowerCase();
-//   if (normalize !== 'usa') {
-//     console.log(
-//       'Please you are not a citizen, pick the resident permit form first!'
-//     );
-//   }
-// };
+const checkCitizen = function (ctz) {
+  const normalize = ctz.toLowerCase();
+  if (normalize !== 'usa') {
+    console.log(
+      'Please you are not a citizen, pick the resident permit form first!'
+    );
+  }
+};
+
+function amFunction() {
+  console.log('I am a javascript function');
+}
 
 // const john = {
 //   age: 25,

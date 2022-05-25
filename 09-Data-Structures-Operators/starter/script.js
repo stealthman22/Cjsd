@@ -410,7 +410,7 @@ restaurant.orderDelivery({
 // }
 
 // // use cases
-// const staff = ['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter'];
+const staff = ['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter'];
 
 // const staffUnique = new Set(staff);
 
