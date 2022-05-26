@@ -1,4 +1,5 @@
 'use strict';
+const answerPoll = document.querySelector('.poll');
 
 const poll = {
   question: 'What is your favourite programming language?',
@@ -14,21 +15,26 @@ const poll = {
     );
     // Check what is returned against some rules
     // is it NaN?
+
     if (
       isNaN(favouriteLanguage) ||
       favouriteLanguage < 0 ||
       favouriteLanguage > 3
     ) {
-      alert('Follow instructions');
+      alert('Please follow the  instructions on how to answer this poll');
     } else {
-      for (let index = 0; index < this.answers.length; index++) {}
+      for (let i = 0; i < this.answers.length; i++) {
+        if (favouriteLanguage === i) {
+          this.answers[i] += 1;
+        }
+      }
+      console.log(this.answers);
     }
-
-    console.log(this.answers);
   },
 };
 
-poll.registerNewAnswer();
+// bind the handler reference to the this keyword of the poll object
+answerPoll.addEventListener('click', poll.registerNewAnswer.bind(poll));
 
 // const mine = function () {
 //   const favNum = Number(
