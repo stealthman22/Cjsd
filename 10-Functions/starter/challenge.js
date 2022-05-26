@@ -30,9 +30,9 @@ const poll = {
         }
       }
     }
-    return this.displayResuts(this.answers);
+    return this.displayResults(this.answers);
   },
-  displayResuts(type) {
+  displayResults(type) {
     if (Array.isArray(type)) {
       console.log(type);
     } else if (typeof type === 'string') {
@@ -43,6 +43,21 @@ const poll = {
 
 // bind the handler reference to the this keyword of the poll object
 answerPoll.addEventListener('click', poll.registerNewAnswer.bind(poll));
+
+// No 5 Bonus
+
+const Data1 = [5, 2, 3];
+const Data2 = [1, 5, 3, 9, 6, 1];
+const Data3 = String(Data2);
+
+const newResults = poll.displayResults;
+console.log(newResults(Data1));
+console.log(newResults(Data2));
+console.log(newResults(Data3));
+// const pollRandom = poll.displayResuts.bind(poll);
+// console.log(pollRandom(Data1));
+// console.log(pollRandom(Data2));
+// console.log(pollRandom(Data3));
 
 // const mine = function () {
 //   const favNum = Number(
