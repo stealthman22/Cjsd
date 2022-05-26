@@ -6,6 +6,7 @@ const poll = {
   options: ['0: JavaScript', '1: Python', '2: Rust', '3:C++'],
   // This generates [0, 0, 0, 0]. More in the next section!
   answers: new Array(4).fill(0),
+
   registerNewAnswer() {
     // Return value must be a number
     const favouriteLanguage = Number(
@@ -28,7 +29,15 @@ const poll = {
           this.answers[i] += 1;
         }
       }
-      console.log(this.answers);
+    }
+    this.displayResuts(this.answers);
+    console.log(poll.answers);
+  },
+  displayResuts(type) {
+    if (typeof type === 'array') {
+      console.log(typeof type);
+    } else if (typeof type === 'string') {
+      // console.log(`Poll results are ${this.answers[0]}`);
     }
   },
 };
