@@ -30,14 +30,13 @@ const poll = {
         }
       }
     }
-    this.displayResuts(this.answers);
-    console.log(poll.answers);
+    return this.displayResuts(this.answers);
   },
   displayResuts(type) {
-    if (typeof type === 'array') {
-      console.log(typeof type);
+    if (Array.isArray(type)) {
+      console.log(type);
     } else if (typeof type === 'string') {
-      // console.log(`Poll results are ${this.answers[0]}`);
+      console.log(`Poll results are ${type}`);
     }
   },
 };
@@ -95,3 +94,9 @@ answerPoll.addEventListener('click', poll.registerNewAnswer.bind(poll));
 //   : favouriteLanguage === 2
 //   ? (this.answers[2] += 1)
 //   : (this.answers[3] += 1);
+
+// let myArr = Array(5).fill(2);
+
+// myArr = String(myArr);
+// console.log(typeof myArr);
+// console.log(myArr);
