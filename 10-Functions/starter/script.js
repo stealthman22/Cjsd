@@ -250,3 +250,30 @@ function amFunction() {
 
 // const finalCalcVAT = calcVAT();
 // console.log(finalCalcVAT(100));
+
+//  Immediately Invoked function expression IIFE
+
+(function () {
+  console.log('This will never run again');
+})();
+
+(() => console.log('This will never run again even in arrow functions'))();
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} [passengers]`);
+  };
+};
+
+// we can say the booker function closed over the securebooking function's cope (it's variable environment; this would include even functino arguments )
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+
+// We can use that to look at closrue
+console.dir(booker);
