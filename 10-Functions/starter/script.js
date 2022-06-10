@@ -277,3 +277,5 @@ booker();
 
 // We can use that to look at closrue
 console.dir(booker);
+
+// Turns out i did not push my git commits before my linux mint crashed and now i have to restudy last 2 lectures in functions
