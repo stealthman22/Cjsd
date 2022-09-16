@@ -74,3 +74,46 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+let arr = ['a', 'b', 'c', 'd', 'e'];
+
+// SLICE
+// The slice method can take a part of the array (does not mutate original array)
+console.log(arr.slice(2));
+console.log(arr.slice(2, -1));
+
+//  slice can create a shallow copy of an array, similar to the spread operator
+console.log(arr.slice());
+console.log(...arr);
+
+// SPLICE
+// splice mutates original array by deleting specified index
+// it returns the removed item in a new array.
+// console.log(arr.splice(2));
+
+// a good use case of splice is to delete last added element to an array
+// console.log(arr.splice(-1));
+
+// second param in slice is called Delete count
+// it specifies how many items from the starting index should be deleted
+// console.log(arr.splice(0, 3));
+console.log(arr);
+
+// REVERSE
+//  Returns an array in it's reversed order
+// It mutates the original array
+const arr2 = ['j', 'i', 'g', 'f'];
+arr2.reverse;
+console.log(arr2);
+
+// CONCAT
+// Conatenates two arrays  (does not mutate original array)
+const letters = arr.concat(arr2);
+// same as this
+console.log([...arr, ...arr2]);
+
+// JOIN
+// joins all items in an array as a stirng with  a seperator you specified
+console.log(letters.join('-'));
+
+// Looping over arrays
