@@ -117,3 +117,4 @@ console.log([...arr, ...arr2]);
 console.log(letters.join('-'));
 
 // Looping over arrays
+// arr2.forEach()
