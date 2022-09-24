@@ -91,7 +91,7 @@ console.log(...arr);
 // it returns the removed item in a new array.
 // console.log(arr.splice(2));
 
-// a good use case of splice is to delete last added element to an array
+// a good use case offf of splice is to delete last added element to an array
 // console.log(arr.splice(-1));
 
 // second param in slice is called Delete count
