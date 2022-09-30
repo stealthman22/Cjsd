@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // BANKIST APP
-// learning arrays is so important to be good at js
+// learning arrays is so important to be good at jsssss
 
 // Data
 const account1 = {
