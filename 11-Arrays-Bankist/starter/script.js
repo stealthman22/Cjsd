@@ -118,6 +118,9 @@ console.log([...arr, ...arr2]);
 console.log(letters.join('-'));
 
 // Looping over arrays
-arr2.forEach()
+const loopedArray = arr2.forEach((item) => {
+item + 1;
 
+})
 
+console.log(typeof loopedArray)
