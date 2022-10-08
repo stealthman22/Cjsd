@@ -120,7 +120,7 @@ console.log(letters.join('-'));
 // Looping over arrays
 const loopedArray = arr2.forEach((item) => {
 item + 1;
-// this does not work
+// this does not work at all
 })
 
 console.log(typeof loopedArray)
