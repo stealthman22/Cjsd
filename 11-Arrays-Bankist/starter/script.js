@@ -123,4 +123,4 @@ const loopedArray = arr2.forEach(item => {
   // now i'm back
 });
 
-console.log(typeof loopedArray);
+// console.log(typeof loopedArray);
